@@ -12,10 +12,14 @@ namespace BetterPotions.Common.Players
         public bool ammoReservation;
         public bool manaRegeneration;
 
+        public bool architect;
+
         public override void ResetEffects()
         {
             ammoReservation = false;
             manaRegeneration = false;
+
+            architect = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -25,7 +29,6 @@ namespace BetterPotions.Common.Players
 
             return base.CanConsumeAmmo(weapon, ammo);
         }
-
 
         int manaRegenerationCounter = 0;
         public override void PostUpdateBuffs()

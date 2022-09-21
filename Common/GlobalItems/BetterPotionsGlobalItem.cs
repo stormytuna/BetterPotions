@@ -119,10 +119,94 @@ namespace BetterPotions.Common.GlobalItems
 
         public override void SetDefaults(Item item)
         {
-            if (item.type == ItemID.ArcheryPotion)
+            switch (item.type)
             {
-                item.SetNameOverride("Predator Potion");
-                item.buffType = ModContent.BuffType<Predator>();
+                case ItemID.AmmoReservationPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.ArcheryPotion:
+                    item.SetNameOverride("Predator Potion");
+                    item.buffType = ModContent.BuffType<Predator>();
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.BattlePotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.CalmingPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.CratePotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.EndurancePotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.FishingPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.FlipperPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.GillsPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.GravitationPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.HeartreachPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.HunterPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.InfernoPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.InvisibilityPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.IronskinPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.LifeforcePotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.MagicPowerPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.ManaRegenerationPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.ObsidianSkinPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.RagePotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.RegenerationPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.SonarPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.SpelunkerPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.SummoningPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.SwiftnessPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.ThornsPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.TitanPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
+                case ItemID.WrathPotion:
+                    item.buffTime = 10 * 60 * 60;
+                    break;
             }
         }
     }
