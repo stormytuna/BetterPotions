@@ -100,6 +100,10 @@ namespace BetterPotions.Common.GlobalBuffs
                 case BuffID.ManaRegeneration:
                     modPlayer.manaRegeneration = true;
                     break;
+                case BuffID.ObsidianSkin:
+                    player.buffImmune[BuffID.CursedInferno] = true;
+                    player.buffImmune[BuffID.Ichor] = true;
+                    break;
             }
         }
     }
