@@ -29,7 +29,7 @@ namespace BetterPotions.Common.GlobalItems
                     break;
                 case ItemID.BuilderPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
-                    line.Text = "Increases placement range by 3 tiles and placement speed by 75%";
+                    line.Text = "Increases placement range by 3 tiles and placement speed by 50%";
                     break;
                 case ItemID.CalmingPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
@@ -47,6 +47,14 @@ namespace BetterPotions.Common.GlobalItems
                     line = tooltips.Find(x => x.Name == "Tooltip0");
                     line.Text = "Slows falling speed\nPress UP or DOWN to control speed of descent";
                     break;
+                case ItemID.FishingPotion:
+                    line = tooltips.Find(x => x.Name == "Tooltip0");
+                    line.Text = "Increases fishing power by 15";
+                    break;
+                case ItemID.FlipperPotion:
+                    line = tooltips.Find(x => x.Name == "Tooltip0");
+                    line.Text = "Allows you to swim swiftly in liquids";
+                    break;
                 case ItemID.GillsPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
                     line.Text = "Allows you to breathe underwater";
@@ -54,6 +62,10 @@ namespace BetterPotions.Common.GlobalItems
                 case ItemID.GravitationPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
                     line.Text = "Allows you to control gravity\nPress UP to reverse gravity";
+                    break;
+                case ItemID.InvisibilityPotion:
+                    line = tooltips.Find(x => x.Name == "Tooltip0");
+                    line.Text = "Grants invisibility and decreases enemy spawn rate by 20%";
                     break;
                 case ItemID.IronskinPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
@@ -97,11 +109,13 @@ namespace BetterPotions.Common.GlobalItems
                     break;
                 case ItemID.WaterWalkingPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
-                    line.Text = "Grants the ability to walk on water";
+                    line.Text = "Grants the ability to walk on liquids\nPress DOWN to enter liquid";
                     break;
             }
         }
 
         #endregion
+
+
     }
 }
