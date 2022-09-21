@@ -104,6 +104,10 @@ namespace BetterPotions.Common.GlobalBuffs
                     player.buffImmune[BuffID.CursedInferno] = true;
                     player.buffImmune[BuffID.Ichor] = true;
                     break;
+                case BuffID.Summoning:
+                    player.maxTurrets++;
+                    player.GetDamage(DamageClass.Summon) += 0.1f;
+                    break;
             }
         }
     }
