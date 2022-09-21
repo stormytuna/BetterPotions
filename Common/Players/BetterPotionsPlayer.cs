@@ -10,10 +10,12 @@ namespace BetterPotions.Common.Players
     public class BetterPotionsPlayer : ModPlayer
     {
         public bool ammoReservation;
+        public bool manaRegeneration;
 
         public override void ResetEffects()
         {
             ammoReservation = false;
+            manaRegeneration = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -23,6 +25,22 @@ namespace BetterPotions.Common.Players
 
             return base.CanConsumeAmmo(weapon, ammo);
         }
+
+
+        int manaRegenerationCounter = 0;
+        public override void PostUpdateBuffs()
+        {
+            if (manaRegeneration)
+            {
+                manaRegenerationCounter++;
+                if (manaRegenerationCounter > 15 && Player.statMana < Player.statManaMax2)
+                {
+                    Player.statMana++;
+                    manaRegenerationCounter = 0;
+                }
+            }
+        }
+
 
         private int[] buffs = new int[Player.MaxBuffs];
         private int[] buffTimes = new int[Player.MaxBuffs];

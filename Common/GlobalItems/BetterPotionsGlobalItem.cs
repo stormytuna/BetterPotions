@@ -78,7 +78,7 @@ namespace BetterPotions.Common.GlobalItems
                     break;
                 case ItemID.ManaRegenerationPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
-                    line.Text = "Increases mana regeneration and grants a small amount of constant mana regeneration";
+                    line.Text = "Increases mana regeneration and constantly regenerate 4 mana per second";
                     break;
                 case ItemID.NightOwlPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");

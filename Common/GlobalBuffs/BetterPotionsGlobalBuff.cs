@@ -55,7 +55,7 @@ namespace BetterPotions.Common.GlobalBuffs
                     tip = "Increased defense by 8";
                     break;
                 case BuffID.ManaRegeneration:
-                    tip = "Increased mana regeneration and constantly regenerate a small amount of mana";
+                    tip = "Increased mana regeneration and constantly regenerate 4 mana per second";
                     break;
                 case BuffID.NightOwl:
                     tip = "You can see better in the dark";
@@ -96,6 +96,9 @@ namespace BetterPotions.Common.GlobalBuffs
                     player.tileSpeed += 0.25f;
                     player.wallSpeed += 0.25f;
                     player.blockRange += 2;
+                    break;
+                case BuffID.ManaRegeneration:
+                    modPlayer.manaRegeneration = true;
                     break;
             }
         }
