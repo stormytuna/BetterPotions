@@ -18,9 +18,6 @@ namespace BetterPotions.Common.GlobalBuffs
                 case BuffID.AmmoReservation:
                     tip = "30% chance to not consume ammo";
                     break;
-                case 16: // Archery
-                    tip = "10% increased ranged damage and critical chance";
-                    break;
                 case BuffID.Battle:
                     tip = "100% increased enemy spawn rate and spawn cap";
                     break;
@@ -87,7 +84,7 @@ namespace BetterPotions.Common.GlobalBuffs
 
         public override void Update(int type, Player player, ref int buffIndex)
         {
-            ModPlayer modPlayer = player.GetModPlayer<BetterPotionsPlayer>();
+            var modPlayer = player.GetModPlayer<BetterPotionsPlayer>();
 
             switch (type)
             {

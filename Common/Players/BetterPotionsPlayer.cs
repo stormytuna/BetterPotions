@@ -9,11 +9,25 @@ namespace BetterPotions.Common.Players
 {
     public class BetterPotionsPlayer : ModPlayer
     {
-        #region BuffsLastAfterDeath
+        public bool ammoReservation;
+
+        public override void ResetEffects()
+        {
+            ammoReservation = false;
+        }
+
+        public override bool CanConsumeAmmo(Item weapon, Item ammo)
+        {
+            if (ammoReservation && Main.rand.NextFloat() < 0.3f)
+                return false;
+
+            return base.CanConsumeAmmo(weapon, ammo);
+        }
 
         private int[] buffs = new int[Player.MaxBuffs];
         private int[] buffTimes = new int[Player.MaxBuffs];
         private float timeMultiplier = 0.75f;
+
 
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
         {
@@ -35,7 +49,5 @@ namespace BetterPotions.Common.Players
                     Player.AddBuff(buffs[i], Convert.ToInt32(timeMultiplier * (float)buffTimes[i]));
             }
         }
-
-        #endregion
     }
 }

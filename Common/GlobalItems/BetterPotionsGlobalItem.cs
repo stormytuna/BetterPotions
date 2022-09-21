@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using BetterPotions.Content.Buffs;
 
 namespace BetterPotions.Common.GlobalItems
 {
@@ -116,6 +117,13 @@ namespace BetterPotions.Common.GlobalItems
 
         #endregion
 
-
+        public override void SetDefaults(Item item)
+        {
+            if (item.type == ItemID.ArcheryPotion)
+            {
+                item.SetNameOverride("Predator Potion");
+                item.buffType = ModContent.BuffType<Predator>();
+            }
+        }
     }
 }
