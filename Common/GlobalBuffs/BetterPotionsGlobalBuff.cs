@@ -92,6 +92,11 @@ namespace BetterPotions.Common.GlobalBuffs
                     player.ammoPotion = false;
                     modPlayer.ammoReservation = true;
                     break;
+                case BuffID.Builder:
+                    player.tileSpeed += 0.25f;
+                    player.wallSpeed += 0.25f;
+                    player.blockRange += 2;
+                    break;
             }
         }
     }
