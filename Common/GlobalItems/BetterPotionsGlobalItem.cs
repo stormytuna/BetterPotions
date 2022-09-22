@@ -117,6 +117,8 @@ namespace BetterPotions.Common.GlobalItems
 
         #endregion
 
+        #region SetDefaults
+
         public override void SetDefaults(Item item)
         {
             switch (item.type)
@@ -209,5 +211,7 @@ namespace BetterPotions.Common.GlobalItems
                     break;
             }
         }
+
+        #endregion
     }
 }

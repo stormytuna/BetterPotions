@@ -4,6 +4,8 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using BetterPotions.Content.Projectiles;
+using Microsoft.Xna.Framework;
 
 namespace BetterPotions.Common.Players
 {
@@ -52,6 +54,7 @@ namespace BetterPotions.Common.Players
 
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
         {
+            // Keep buffs on death
             for (int i = 0; i < Player.buffType.Length; i++)
             {
                 if (!Main.debuff[Player.buffType[i]])
@@ -60,6 +63,15 @@ namespace BetterPotions.Common.Players
                     buffTimes[i] = Player.buffTime[i];
                 }
             }
+
+            // Grave potion marker
+            foreach (Projectile p in Main.projectile)
+            {
+                if (p.type == ModContent.ProjectileType<GravePotionMarker>() && p.owner == Player.whoAmI)
+                    p.Kill();
+            }
+            int proj = Projectile.NewProjectile(Player.GetSource_Misc("-1"), Player.position, Vector2.Zero, ModContent.ProjectileType<GravePotionMarker>(), 0, 0f, Player.whoAmI);
+            Main.projectile[proj].Center = Player.Center;
         }
 
         public override void OnRespawn(Player player)
