@@ -7,11 +7,11 @@ using BetterPotions.Content.Buffs;
 
 namespace BetterPotions.Content.Items
 {
-	public class WarPotion : ModItem
+	public class InstigatePotion : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Increases enemy spawn rate and spawn cap by 400%");
+			Tooltip.SetDefault("Makes enemies more likely to target you");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 
@@ -34,9 +34,9 @@ namespace BetterPotions.Content.Items
 			Item.UseSound = SoundID.Item3;
 			Item.maxStack = 30;
 			Item.consumable = true;
-			Item.rare = ItemRarityID.Pink;
-			Item.value = Item.sellPrice(gold: 4);
-			Item.buffType = ModContent.BuffType<War>();
+			Item.rare = ItemRarityID.Green;
+			Item.value = Item.sellPrice(silver: 5);
+			Item.buffType = ModContent.BuffType<Instigate>();
 			Item.buffTime = 10 * 60 * 60;
 		}
 
@@ -44,9 +44,8 @@ namespace BetterPotions.Content.Items
         {
 			CreateRecipe()
 				.AddIngredient(ItemID.BottledWater)
-				.AddIngredient(ItemID.SoulofMight)
-				.AddIngredient(ItemID.Blinkroot)
-				.AddIngredient(ItemID.Shiverthorn)
+				.AddIngredient(ItemID.TissueSample)
+				.AddIngredient(ItemID.Deathweed)
 				.AddTile(TileID.Bottles)
 				.Register();
         }
