@@ -38,7 +38,17 @@ namespace BetterPotions.Content.Items
 			Item.value = Item.buyPrice(gold: 1);
 		}
 
-		public override bool CanUseItem(Player player)
+        public override void AddRecipes()
+        {
+			CreateRecipe()
+				.AddIngredient(ItemID.BottledWater)
+				.AddIngredient(ItemID.SpecularFish)
+				.AddIngredient(ItemID.Deathweed)
+				.AddTile(TileID.Bottles)
+				.Register();
+		}
+
+        public override bool CanUseItem(Player player)
 			=> player.ownedProjectileCounts[ModContent.ProjectileType<GravePotionMarker>()] > 0;
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)

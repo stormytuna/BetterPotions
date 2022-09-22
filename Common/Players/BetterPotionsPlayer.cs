@@ -15,6 +15,7 @@ namespace BetterPotions.Common.Players
         public bool manaRegeneration;
 
         public bool architect;
+        public bool war;
 
         public override void ResetEffects()
         {
@@ -22,6 +23,7 @@ namespace BetterPotions.Common.Players
             manaRegeneration = false;
 
             architect = false;
+            war = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
