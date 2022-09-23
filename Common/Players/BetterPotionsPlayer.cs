@@ -24,6 +24,7 @@ namespace BetterPotions.Common.Players
         public bool war;
         public bool discoInferno;
         public bool dazzlingFlames;
+        public bool steelfall;
 
         public override void ResetEffects()
         {
@@ -34,6 +35,7 @@ namespace BetterPotions.Common.Players
             war = false;
             discoInferno = false;
             dazzlingFlames = false;
+            steelfall = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -105,13 +107,21 @@ namespace BetterPotions.Common.Players
                     manaRegenerationCounter = 0;
                 }
             }
+
+            if (steelfall)
+            {
+                if (Player.controlDown)
+                    Player.maxFallSpeed *= 2f;
+                else
+                    Player.maxFallSpeed *= 1.5f;
+            }
         }
 
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
             if (discoInferno)
             {
-                // Draw the flame ring
+                // Draw the flame ring - this is all code from vanilla and i cba renaming variables and optimising lmao
                 Asset<Texture2D> discoRingTexture = ModContent.Request<Texture2D>(DiscoInfernoRingPath);
 
                 float num = 1f;
