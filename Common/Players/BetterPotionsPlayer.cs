@@ -166,6 +166,11 @@ namespace BetterPotions.Common.Players
             {
                 Player.ClearBuff(BuffID.Inferno);
             }
+
+            if (Player.HasBuff(ModContent.BuffType<Orichalcumskin>()) && Player.HasBuff(BuffID.Ironskin))
+            {
+                Player.ClearBuff(BuffID.Ironskin);
+            }
         }
 
         public override void UpdateBadLifeRegen()
