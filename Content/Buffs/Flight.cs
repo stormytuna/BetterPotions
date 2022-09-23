@@ -24,6 +24,7 @@ namespace BetterPotions.Content.Buffs
             player.wings = 34;
             player.wingsLogic = 2;
             player.wingTimeMax = 50;
+            player.noFallDmg = true;
         }
     }
 }
