@@ -17,9 +17,9 @@ namespace BetterPotions.Content.Items
 
 			// Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
 			ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
-				new Color(240, 240, 240),
-				new Color(200, 200, 200),
-				new Color(140, 140, 140)
+				new Color(220, 215, 250),
+				new Color(102, 101, 201),
+				new Color(120, 99, 197)
 			};
 		}
 

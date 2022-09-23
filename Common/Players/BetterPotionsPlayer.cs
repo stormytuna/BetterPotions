@@ -5,17 +5,25 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using BetterPotions.Content.Projectiles;
+using BetterPotions.Content.Buffs;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Terraria.GameContent;
+using ReLogic.Content;
 
 namespace BetterPotions.Common.Players
 {
     public class BetterPotionsPlayer : ModPlayer
     {
+        private const string DiscoInfernoRingPath = "BetterPotions/Content/Buffs/DiscoInfernoRing";
+
         public bool ammoReservation;
         public bool manaRegeneration;
 
         public bool architect;
         public bool war;
+        public bool discoInferno;
+        public bool dazzlingFlames;
 
         public override void ResetEffects()
         {
@@ -24,6 +32,8 @@ namespace BetterPotions.Common.Players
 
             architect = false;
             war = false;
+            discoInferno = false;
+            dazzlingFlames = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -35,8 +45,57 @@ namespace BetterPotions.Common.Players
         }
 
         int manaRegenerationCounter = 0;
+        float discoInfernoRingScale = 1f;
+        float discoInfernoRingRot;
+
         public override void PostUpdateBuffs()
         {
+            if (discoInferno)
+            {
+                // Do the actual effect
+                Lighting.AddLight(Player.Center, TorchID.Hallowed);
+                float range = 200f;
+                int damage = 25;
+                for (int i = 0; i < 200; i++)
+                {
+                    NPC npc = Main.npc[i];
+                    if (npc.active && !npc.friendly && npc.damage > 0 && !npc.dontTakeDamage && !npc.buffImmune[BuffID.CursedInferno] && Player.CanNPCBeHitByPlayerOrPlayerProjectile(npc) && Vector2.Distance(Player.Center, npc.Center) < range)
+                    {
+                        if (npc.FindBuffIndex(ModContent.BuffType<DazzlingFlames>()) == -1)
+                            npc.AddBuff(ModContent.BuffType<DazzlingFlames>(), 120);
+
+                        if (Player.infernoCounter % 60 == 0)
+                            Player.ApplyDamageToNPC(npc, damage, 0f, 0, crit: false);
+
+                    }
+                }
+
+                if (!Player.hostile)
+                    return;
+
+                for (int i = 0; i < 255; i++)
+                {
+                    Player pl = Main.player[i];
+                    if (pl == Player || !pl.active || pl.dead || !pl.hostile || pl.buffImmune[BuffID.CursedInferno] || (pl.team == Player.team && pl.team != 0) || !(Vector2.Distance(Player.Center, pl.Center) < range))
+                    {
+                        continue;
+                    }
+
+                    if (pl.FindBuffIndex(ModContent.BuffType<DazzlingFlames>()) == -1)
+                        pl.AddBuff(ModContent.BuffType<DazzlingFlames>(), 120);
+
+                    if (Player.infernoCounter % 60 == 0)
+                    {
+                        pl.Hurt(PlayerDeathReason.LegacyEmpty(), damage, 0, pvp: true);
+                        if (Main.netMode != NetmodeID.SinglePlayer)
+                        {
+                            PlayerDeathReason reason = PlayerDeathReason.ByOther(16);
+                            NetMessage.SendPlayerHurt(i, reason, damage, 0, critical: false, pvp: true, -1);
+                        }
+                    }
+                }
+            }
+
             if (manaRegeneration)
             {
                 manaRegenerationCounter++;
@@ -45,6 +104,90 @@ namespace BetterPotions.Common.Players
                     Player.statMana++;
                     manaRegenerationCounter = 0;
                 }
+            }
+        }
+
+        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        {
+            if (discoInferno)
+            {
+                // Draw the flame ring
+                Asset<Texture2D> discoRingTexture = ModContent.Request<Texture2D>(DiscoInfernoRingPath);
+
+                float num = 1f;
+                float num2 = 0.1f;
+                float num3 = 0.9f;
+                if (!Main.gamePaused)
+                {
+                    discoInfernoRingScale += 0.004f;
+                    discoInfernoRingRot += 0.05f;
+                }
+
+                if (discoInfernoRingScale < 1f)
+                {
+                    num = discoInfernoRingScale;
+                }
+                else
+                {
+                    discoInfernoRingScale = 0.8f;
+                    num = discoInfernoRingScale;
+                }
+
+                if (discoInfernoRingRot > (float)Math.PI * 2f)
+                {
+                    discoInfernoRingRot -= (float)Math.PI * 2f;
+                }
+                if (discoInfernoRingRot < (float)Math.PI * 2f)
+                {
+                    discoInfernoRingRot += (float)Math.PI * 2f;
+                }
+
+                for (int i = 0; i < 4; i++)
+                {
+                    float num4 = num + num2 * (float)i;
+                    if (num4 > 1f)
+                    {
+                        num4 -= num2 * 2f;
+                    }
+                    float num5 = MathHelper.Lerp(0.8f, 0f, Math.Abs(num4 - num3) * 10f);
+                    Main.spriteBatch.Draw(discoRingTexture.Value, Player.Center - Main.screenPosition, new Rectangle(0, 400 * i, 400, 400), new Color(num5, num5, num5, num5 / 2f), discoInfernoRingRot + (float)Math.PI / 3f * (float)i, new Vector2(200f, 200f), num4, SpriteEffects.None, 0f);
+                }
+            }
+        }
+
+        public override void PreUpdateBuffs()
+        {
+            if (Player.HasBuff(ModContent.BuffType<War>()) && Player.HasBuff(BuffID.Battle))
+            {
+                Player.ClearBuff(BuffID.Battle);
+            }
+
+            if (Player.HasBuff(ModContent.BuffType<DiscoInferno>()) && Player.HasBuff(BuffID.Inferno))
+            {
+                Player.ClearBuff(BuffID.Inferno);
+            }
+        }
+
+        public override void UpdateBadLifeRegen()
+        {
+            if (dazzlingFlames)
+            {
+                // Dust
+                Dust d = Dust.NewDustDirect(new Vector2(Player.position.X - 2f, Player.position.Y - 2f), Player.width + 4, Player.height + 4, DustID.HallowedTorch, Player.velocity.X * 0.4f, Player.velocity.Y * 0.4f, 180, default(Color), 1.95f);
+                d.noGravity = true;
+                d.velocity *= 0.75f;
+                d.velocity.X *= 0.75f;
+                d.velocity.Y -= 1f;
+                if (Main.rand.NextBool(4))
+                {
+                    d.noGravity = false;
+                    d.scale *= 0.5f;
+                }
+
+                // Actual effect
+                Player.lifeRegen = 0;
+                Player.lifeRegenTime = 0;
+                Player.lifeRegen -= 12;
             }
         }
 

@@ -213,5 +213,18 @@ namespace BetterPotions.Common.GlobalItems
         }
 
         #endregion
+
+        public override bool CanUseItem(Item item, Player player)
+        {
+            switch (item.type)
+            {
+                case ItemID.BattlePotion:
+                    return !player.HasBuff(ModContent.BuffType<War>());
+                case ItemID.InfernoPotion:
+                    return !player.HasBuff(ModContent.BuffType<DiscoInferno>());
+            }
+
+            return base.CanUseItem(item, player);
+        }
     }
 }

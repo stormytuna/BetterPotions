@@ -7,19 +7,19 @@ using BetterPotions.Content.Buffs;
 
 namespace BetterPotions.Content.Items
 {
-	public class InstigatePotion : ModItem
+	public class DiscoInfernoPotion : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Makes enemies more likely to target you");
+			Tooltip.SetDefault("Engulf nearby enemies in dazzling flames\nMutually exclusive with Inferno\n'Burn baby burn!'");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 
 			// Dust that will appear in these colors when the item with ItemUseStyleID.DrinkLiquid is used
 			ItemID.Sets.DrinkParticleColors[Type] = new Color[3] {
-				new Color(236, 170, 171),
-				new Color(255, 125, 129),
-				new Color(255, 210, 211)
+				new Color(119, 178, 247),
+				new Color(255, 139, 234),
+				new Color(251, 251, 251)
 			};
 		}
 
@@ -34,9 +34,9 @@ namespace BetterPotions.Content.Items
 			Item.UseSound = SoundID.Item3;
 			Item.maxStack = 30;
 			Item.consumable = true;
-			Item.rare = ItemRarityID.Green;
-			Item.value = Item.sellPrice(silver: 5);
-			Item.buffType = ModContent.BuffType<Instigate>();
+			Item.rare = ItemRarityID.LightRed;
+			Item.value = Item.sellPrice(silver: 20);
+			Item.buffType = ModContent.BuffType<DiscoInferno>();
 			Item.buffTime = 10 * 60 * 60;
 		}
 
@@ -44,8 +44,9 @@ namespace BetterPotions.Content.Items
         {
 			CreateRecipe()
 				.AddIngredient(ItemID.BottledWater)
-				.AddIngredient(ItemID.TissueSample)
-				.AddIngredient(ItemID.Deathweed)
+				.AddIngredient(ItemID.CrystalShard)
+				.AddIngredient(ItemID.FlarefinKoi)
+				.AddIngredient(ItemID.Fireblossom)
 				.AddTile(TileID.Bottles)
 				.Register();
         }
