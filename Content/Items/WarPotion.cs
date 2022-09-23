@@ -44,7 +44,7 @@ namespace BetterPotions.Content.Items
         {
 			CreateRecipe()
 				.AddIngredient(ItemID.BottledWater)
-				.AddIngredient(ItemID.SoulofMight)
+				.AddIngredient(ItemID.SoulofFright)
 				.AddIngredient(ItemID.Blinkroot)
 				.AddIngredient(ItemID.Shiverthorn)
 				.AddTile(TileID.Bottles)
