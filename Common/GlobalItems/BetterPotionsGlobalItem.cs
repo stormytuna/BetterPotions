@@ -82,7 +82,7 @@ namespace BetterPotions.Common.GlobalItems
                     break;
                 case ItemID.NightOwlPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
-                    line.Text = "Grants night vision";
+                    line.Text = "Allows you to see better in the dark";
                     break;
                 case ItemID.ObsidianSkinPotion:
                     line = tooltips.Find(x => x.Name == "Tooltip0");
