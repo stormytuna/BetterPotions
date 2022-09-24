@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using BetterPotions.Content.Projectiles;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Content.Items;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
@@ -25,6 +26,7 @@ namespace BetterPotions.Common.Players
         public bool discoInferno;
         public bool dazzlingFlames;
         public bool steelfall;
+        public bool flight;
 
         public override void ResetEffects()
         {
@@ -36,6 +38,7 @@ namespace BetterPotions.Common.Players
             discoInferno = false;
             dazzlingFlames = false;
             steelfall = false;
+            flight = false;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
@@ -114,6 +117,18 @@ namespace BetterPotions.Common.Players
                     Player.maxFallSpeed *= 2f;
                 else
                     Player.maxFallSpeed *= 1.5f;
+            }
+
+            if (flight)
+            {
+                // Dust
+                if(Main.rand.NextBool(5) && (Player.wingTime > 0 && Player.controlJump || Player.velocity.Y > 0 && Player.controlJump))
+                {
+                    Vector2 dustCenter = Player.Center + new Vector2(Player.direction * -9f, 2f);
+                    Vector2 dustBoxSize = new Vector2(35f, 35f);
+                    Vector2 dustSpeed = new Vector2(Main.rand.NextFloat(-0.5f, 0.5f), Main.rand.NextFloat(-0.5f, 0.5f));
+                    int d = Dust.NewDust(dustCenter - dustBoxSize / 2, (int)dustBoxSize.X, (int)dustBoxSize.Y, DustID.Clentaminator_Cyan, dustSpeed.X, dustSpeed.Y, 0, default, 0.7f);
+                }
             }
         }
 

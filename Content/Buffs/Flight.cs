@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using BetterPotions.Content.Items;
+using BetterPotions.Common.Players;
 
 namespace BetterPotions.Content.Buffs
 {
@@ -21,10 +23,11 @@ namespace BetterPotions.Content.Buffs
                     return;
             }
 
-            player.wings = 34;
-            player.wingsLogic = 2;
+            Item wingItem = new Item(ModContent.ItemType<FlightPotionWings>());
+            player.wingsLogic = wingItem.wingSlot;
             player.wingTimeMax = 50;
             player.noFallDmg = true;
+            player.GetModPlayer<BetterPotionsPlayer>().flight = true;
         }
     }
 }

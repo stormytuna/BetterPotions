@@ -34,8 +34,8 @@ namespace BetterPotions.Content.Items
 			Item.UseSound = SoundID.Item3;
 			Item.maxStack = 30;
 			Item.consumable = true;
-			Item.rare = ItemRarityID.Green;
-			Item.value = Item.buyPrice(gold: 1);
+			Item.rare = ItemRarityID.LightRed;
+			Item.value = Item.sellPrice(silver: 2);
 			Item.buffType = ModContent.BuffType<Flight>();
 			Item.buffTime = 10 * 60 * 60;
 		}
@@ -44,8 +44,8 @@ namespace BetterPotions.Content.Items
         {
 			CreateRecipe()
 				.AddIngredient(ItemID.BottledWater)
+				.AddIngredient(ItemID.SoulofFlight)
 				.AddIngredient(ItemID.Feather)
-				.AddIngredient(ItemID.Bone)
 				.AddIngredient(ItemID.Daybloom)
 				.AddTile(TileID.Bottles)
 				.Register();
