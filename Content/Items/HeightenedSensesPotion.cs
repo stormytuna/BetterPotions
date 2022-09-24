@@ -11,7 +11,7 @@ namespace BetterPotions.Content.Items
 	{
 		public override void SetStaticDefaults()
 		{
-			Tooltip.SetDefault("Allows you to see nearby sources of danger, see better in the dark and see nearby enemies");
+			Tooltip.SetDefault("Allows you to see nearby sources of danger, see better in the dark and see nearby enemies\nMutually exclusive with Dangersense, Night Owl and Hunter");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 

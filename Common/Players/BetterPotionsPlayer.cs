@@ -196,6 +196,21 @@ namespace BetterPotions.Common.Players
             {
                 Player.ClearBuff(BuffID.Ironskin);
             }
+
+            if (Player.HasBuff(ModContent.BuffType<Orichalcumskin>()) && Player.HasBuff(BuffID.NightOwl))
+            {
+                Player.ClearBuff(BuffID.NightOwl);
+            }
+
+            if (Player.HasBuff(ModContent.BuffType<Orichalcumskin>()) && Player.HasBuff(BuffID.Dangersense))
+            {
+                Player.ClearBuff(BuffID.Dangersense);
+            }
+
+            if (Player.HasBuff(ModContent.BuffType<Orichalcumskin>()) && Player.HasBuff(BuffID.Hunter))
+            {
+                Player.ClearBuff(BuffID.Hunter);
+            }
         }
 
         public override void UpdateBadLifeRegen()

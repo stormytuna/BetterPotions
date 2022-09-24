@@ -224,6 +224,10 @@ namespace BetterPotions.Common.GlobalItems
                     return !player.HasBuff(ModContent.BuffType<DiscoInferno>());
                 case ItemID.IronskinPotion:
                     return !player.HasBuff(ModContent.BuffType<Orichalcumskin>());
+                case ItemID.HunterPotion:
+                case ItemID.NightOwlPotion:
+                case ItemID.TrapsightPotion:
+                    return !player.HasBuff(ModContent.BuffType<HeightenedSenses>());
             }
 
             return base.CanUseItem(item, player);
