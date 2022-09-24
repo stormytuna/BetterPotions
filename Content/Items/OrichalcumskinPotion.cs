@@ -35,7 +35,7 @@ namespace BetterPotions.Content.Items
 			Item.maxStack = 30;
 			Item.consumable = true;
 			Item.rare = ItemRarityID.LightRed;
-			Item.value = Item.sellPrice(silver: 15);
+			Item.value = Item.sellPrice(silver: 2);
 			Item.buffType = ModContent.BuffType<Orichalcumskin>();
 			Item.buffTime = 10 * 60 * 60;
 		}

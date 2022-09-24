@@ -35,7 +35,7 @@ namespace BetterPotions.Content.Items
 			Item.maxStack = 30;
 			Item.consumable = true;
 			Item.rare = ItemRarityID.Pink;
-			Item.value = Item.sellPrice(gold: 4);
+			Item.value = Item.sellPrice(silver: 2);
 			Item.buffType = ModContent.BuffType<War>();
 			Item.buffTime = 10 * 60 * 60;
 		}
