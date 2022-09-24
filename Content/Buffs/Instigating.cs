@@ -5,17 +5,17 @@ using Terraria.ModLoader;
 
 namespace BetterPotions.Content.Buffs
 {
-    public class Deter : ModBuff
+    public class Instigating : ModBuff
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Deter");
-            Description.SetDefault("Enemies are less likely to target you");
+            DisplayName.SetDefault("Instigating");
+            Description.SetDefault("Enemies are more likely to target you");
         }
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.aggro -= 200;
+            player.aggro += 200;
         }
     }
 }

@@ -7,7 +7,7 @@ using BetterPotions.Content.Buffs;
 
 namespace BetterPotions.Content.Items
 {
-	public class InstigatePotion : ModItem
+	public class InstigatingPotion : ModItem
 	{
 		public override void SetStaticDefaults()
 		{
@@ -36,7 +36,7 @@ namespace BetterPotions.Content.Items
 			Item.consumable = true;
 			Item.rare = ItemRarityID.Green;
 			Item.value = Item.sellPrice(silver: 2);
-			Item.buffType = ModContent.BuffType<Instigate>();
+			Item.buffType = ModContent.BuffType<Instigating>();
 			Item.buffTime = 10 * 60 * 60;
 		}
 
