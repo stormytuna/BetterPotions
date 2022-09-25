@@ -37,7 +37,7 @@ namespace BetterPotions.Content.Items
 			Item.rare = ItemRarityID.Blue;
 			Item.value = Item.sellPrice(silver: 2);
 			Item.buffType = ModContent.BuffType<Piercing>();
-			Item.buffTime = 10 * 60 * 60;
+			Item.buffTime = 6 * 60 * 60;
 		}
 
         public override void AddRecipes()
