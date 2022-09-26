@@ -13,7 +13,7 @@ namespace BetterPotions.Content.Items
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("amogus");
+            Tooltip.SetDefault("Unobtainable\nThese wings are used by the Flight Potion because I'm lazy");
 
             ArmorIDs.Wing.Sets.Stats[Item.wingSlot] = new WingStats(80, 4.5f, 1.5f);
         }
