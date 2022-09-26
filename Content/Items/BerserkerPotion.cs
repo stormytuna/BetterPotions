@@ -28,8 +28,8 @@ namespace BetterPotions.Content.Items
 
 		public override void SetDefaults()
 		{
-			Item.width = 24;
-			Item.height = 40;
+			Item.width = 20;
+			Item.height = 30;
 			Item.useStyle = ItemUseStyleID.DrinkLiquid;
 			Item.useAnimation = 15;
 			Item.useTime = 15;
