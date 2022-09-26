@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class InstigatingPotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_Instigating;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Makes enemies more likely to target you");

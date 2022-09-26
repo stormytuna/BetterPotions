@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class DeterringPotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_Deterring;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Makes enemies less likely to target you");

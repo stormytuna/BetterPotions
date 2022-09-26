@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using BetterPotions.Content.Projectiles;
 using BetterPotions.Content.Buffs;
-using BetterPotions.Content.Items;
+using BetterPotions.Common.Configs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria.GameContent;
@@ -16,6 +16,8 @@ namespace BetterPotions.Common.Players
 {
     public class BetterPotionsPlayer : ModPlayer
     {
+        private BetterPotionsConfig modConfig = ModContent.GetInstance<BetterPotionsConfig>();
+
         private const string DiscoInfernoRingPath = "BetterPotions/Content/Buffs/DiscoInfernoRing";
 
         public bool ammoReservation;
@@ -48,6 +50,8 @@ namespace BetterPotions.Common.Players
 
             return base.CanConsumeAmmo(weapon, ammo);
         }
+
+
 
         int manaRegenerationCounter = 0;
         float discoInfernoRingScale = 1f;
@@ -101,6 +105,18 @@ namespace BetterPotions.Common.Players
                 }
             }
 
+            if (flight)
+            {
+                // Dust
+                if (Main.rand.NextBool(5) && (Player.wingTime > 0 && Player.controlJump || Player.velocity.Y > 0 && Player.controlJump))
+                {
+                    Vector2 dustCenter = Player.Center + new Vector2(Player.direction * -9f, 2f);
+                    Vector2 dustBoxSize = new Vector2(35f, 35f);
+                    Vector2 dustSpeed = new Vector2(Main.rand.NextFloat(-0.5f, 0.5f), Main.rand.NextFloat(-0.5f, 0.5f));
+                    int d = Dust.NewDust(dustCenter - dustBoxSize / 2, (int)dustBoxSize.X, (int)dustBoxSize.Y, DustID.Clentaminator_Cyan, dustSpeed.X, dustSpeed.Y, 0, default, 0.7f);
+                }
+            }
+
             if (manaRegeneration)
             {
                 manaRegenerationCounter++;
@@ -117,18 +133,6 @@ namespace BetterPotions.Common.Players
                     Player.maxFallSpeed *= 2f;
                 else
                     Player.maxFallSpeed *= 1.5f;
-            }
-
-            if (flight)
-            {
-                // Dust
-                if(Main.rand.NextBool(5) && (Player.wingTime > 0 && Player.controlJump || Player.velocity.Y > 0 && Player.controlJump))
-                {
-                    Vector2 dustCenter = Player.Center + new Vector2(Player.direction * -9f, 2f);
-                    Vector2 dustBoxSize = new Vector2(35f, 35f);
-                    Vector2 dustSpeed = new Vector2(Main.rand.NextFloat(-0.5f, 0.5f), Main.rand.NextFloat(-0.5f, 0.5f));
-                    int d = Dust.NewDust(dustCenter - dustBoxSize / 2, (int)dustBoxSize.X, (int)dustBoxSize.Y, DustID.Clentaminator_Cyan, dustSpeed.X, dustSpeed.Y, 0, default, 0.7f);
-                }
             }
         }
 
@@ -239,18 +243,20 @@ namespace BetterPotions.Common.Players
 
         private int[] buffs = new int[Player.MaxBuffs];
         private int[] buffTimes = new int[Player.MaxBuffs];
-        private float timeMultiplier = 0.75f;
 
 
         public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
         {
-            // Keep buffs on death
-            for (int i = 0; i < Player.buffType.Length; i++)
+            if (modConfig.PersistentBuffs)
             {
-                if (!Main.debuff[Player.buffType[i]])
+                // Keep buffs on death
+                for (int i = 0; i < Player.buffType.Length; i++)
                 {
-                    buffs[i] = Player.buffType[i];
-                    buffTimes[i] = Player.buffTime[i];
+                    if (!Main.debuff[Player.buffType[i]])
+                    {
+                        buffs[i] = Player.buffType[i];
+                        buffTimes[i] = Player.buffTime[i];
+                    }
                 }
             }
 
@@ -266,10 +272,13 @@ namespace BetterPotions.Common.Players
 
         public override void OnRespawn(Player player)
         {
-            for (int i = 0; i < Player.buffType.Length; i++)
+            if (modConfig.PersistentBuffs)
             {
-                if (buffs[i] >= 0)
-                    Player.AddBuff(buffs[i], Convert.ToInt32(timeMultiplier * (float)buffTimes[i]));
+                for (int i = 0; i < Player.buffType.Length; i++)
+                {
+                    if (buffs[i] >= 0)
+                        Player.AddBuff(buffs[i], Convert.ToInt32((1f - modConfig.PersistentBuffsPenalty) * (float)buffTimes[i]));
+                }
             }
         }
     }

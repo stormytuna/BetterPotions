@@ -4,12 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class BerserkerPotion : ModItem
 	{
-		public override void SetStaticDefaults()
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_Berserker;
+        public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Increases melee damage and speed by 10%");
 

@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class DiscoInfernoPotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_DiscoInferno;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Engulf nearby enemies in dazzling flames\nMutually exclusive with Inferno\n'Burn baby burn!'");

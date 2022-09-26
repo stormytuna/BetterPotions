@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class WarPotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_War;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Increases enemy spawn rate and spawn cap by 400%\nMutually Exclusive with Battle");

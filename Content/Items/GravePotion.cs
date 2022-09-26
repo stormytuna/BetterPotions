@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Projectiles;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class GravePotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_Grave;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Teleports you to where you last died");

@@ -4,11 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using BetterPotions.Content.Buffs;
+using BetterPotions.Common.Configs;
 
 namespace BetterPotions.Content.Items
 {
 	public class HeightenedSensesPotion : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod)
+			=> ModContent.GetInstance<BetterPotionsConfig>().PotionsAdded_HeightenedSenses;
+
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Allows you to see nearby sources of danger, see better in the dark and see nearby enemies\nMutually exclusive with Dangersense, Night Owl and Hunter");
