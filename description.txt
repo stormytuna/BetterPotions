@@ -1,4 +1,4 @@
 Better Potions makes potions better and adds some unique potions. It adds several quality of life changes, such as buffs lasting after death and increasing the time that most potions last. It also changes a few vanilla potions, such as the Archery Potion which has been reworked to be a general ranger potion. Added potions will spawn in chests appropriate with their crafting ingredients, with post HM potions being rarer in late pre-HM chests.
 
 For a full list of changes, visit this item on the Steam Workshop or GitHub. 
-To report any bugs or give feedback, message me on discord (stormytuna#4358) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
+To report any bugs or give feedback, message me on discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
