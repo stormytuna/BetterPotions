@@ -28,3 +28,9 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 * Heightened Senses Potion - See nearby sources of danger, see better in the dark and see the location of enemies. Crafted with bottled water, soul of sight, daybloom and blinkroot
 * Immovable Potion - Grants immunity to knockback. Crafted with bottled water, soul of might, shiverthorn and moonglow
 * Flight Potion - Grants you ethereal wings to fly with. Crafted with bottled water, soul of flight, feather and daybloom
+
+### **Changelog**
+* *v1.1.0* *
+* Fixed an issue where items would display a 10 minute buff time when they shouldn’t
+* *v1.0.0* *
+* Released
