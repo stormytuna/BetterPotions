@@ -144,7 +144,7 @@ namespace BetterPotions.Common.GlobalItems
 
             if (ItemID.Search.TryGetName(item.type, out string itemName) && modConfig.PotionsLastTenMinutes)
             {
-                if (item.buffType > 0 && !Main.debuff[item.buffType] && item.buffTime < 10 * 60 * 60 && !modConfig.TenMinutePotionsBlacklist.Contains(new ItemDefinition(itemName)))
+                if (item.buffType > 0 && BuffShouldBeTenMinutes(item.buffType) && item.buffTime < 10 * 60 * 60 && !modConfig.TenMinutePotionsBlacklist.Contains(new ItemDefinition(itemName)))
                     item.buffTime = 10 * 60 * 60;
             }
 
@@ -154,6 +154,9 @@ namespace BetterPotions.Common.GlobalItems
                 item.buffType = ModContent.BuffType<Predator>();
             }
         }
+
+        private bool BuffShouldBeTenMinutes(int buffType)
+            => !Main.debuff[buffType] && !Main.vanityPet[buffType] && !Main.lightPet[buffType] && !Main.buffNoTimeDisplay[buffType];
 
         public override bool CanUseItem(Item item, Player player)
         {
