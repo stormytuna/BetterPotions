@@ -26,7 +26,7 @@ namespace BetterPotions.Common.GlobalItems
             if (item.type == ItemID.AmmoReservationPotion && modConfig.PotionChanges_AmmoReservation)
             {
                 line = tooltips.Find(x => x.Name == "Tooltip0");
-                line.Text = "Increases chance to not consume ammo by 30%";
+                line.Text = "Increases chance to not consume ammo by 50%";
             }
 
             if (item.type == ItemID.BuilderPotion && modConfig.PotionChanges_Builder)
@@ -53,7 +53,7 @@ namespace BetterPotions.Common.GlobalItems
             if (item.type == ItemID.SummoningPotion && modConfig.PotionChanges_Summoning)
             {
                 line = tooltips.Find(x => x.Name == "Tooltip0");
-                line.Text = "Increases your max number of minions and sentries by 1 and increases minion damage by 10%";
+                line.Text = "Increases your max number of minions and sentries by 1 and increases summon damage by 10%";
             }
 
             if (modConfig.PotionsAndBuffsImprovedTooltips)

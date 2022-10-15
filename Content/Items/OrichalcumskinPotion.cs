@@ -47,15 +47,13 @@ namespace BetterPotions.Content.Items
         public override void AddRecipes()
         {
 			CreateRecipe()
-				.AddIngredient(ItemID.BottledWater)
-				.AddIngredient(ItemID.Daybloom)
+				.AddIngredient(ItemID.IronskinPotion)
 				.AddIngredient(ItemID.OrichalcumOre)
 				.AddTile(TileID.Bottles)
 				.Register();
 
 			CreateRecipe()
-				.AddIngredient(ItemID.BottledWater)
-				.AddIngredient(ItemID.Daybloom)
+				.AddIngredient(ItemID.IronskinPotion)
 				.AddIngredient(ItemID.MythrilOre)
 				.AddTile(TileID.Bottles)
 				.Register();

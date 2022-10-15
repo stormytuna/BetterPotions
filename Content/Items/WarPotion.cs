@@ -47,10 +47,8 @@ namespace BetterPotions.Content.Items
         public override void AddRecipes()
         {
 			CreateRecipe()
-				.AddIngredient(ItemID.BottledWater)
+				.AddIngredient(ItemID.BattlePotion)
 				.AddIngredient(ItemID.SoulofFright)
-				.AddIngredient(ItemID.Blinkroot)
-				.AddIngredient(ItemID.Shiverthorn)
 				.AddTile(TileID.Bottles)
 				.Register();
         }

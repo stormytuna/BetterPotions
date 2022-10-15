@@ -20,6 +20,9 @@ namespace BetterPotions.Common.GlobalBuffs
             {
                 switch (type)
                 {
+                    case BuffID.AmmoReservation:
+                        tip = "50% chance not to consume ammo";
+                        break;
                     case BuffID.Battle:
                         tip = "100% increased enemy spawn rate and spawn cap";
                         break;
@@ -75,7 +78,7 @@ namespace BetterPotions.Common.GlobalBuffs
                         break;
                     case BuffID.Summoning:
                         if (modConfig.PotionChanges_Summoning)
-                            tip = "Increased max number of minions and sentries by 1 and 10% increased minion damage";
+                            tip = "Increased max number of minions and sentries by 1 and 10% increased summon damage";
                         break;
                     case BuffID.Titan:
                         tip = "50% increased knockback";

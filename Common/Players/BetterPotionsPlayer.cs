@@ -29,7 +29,6 @@ namespace BetterPotions.Common.Players
         public bool dazzlingFlames;
         public bool steelfall;
         public bool flight;
-
         public override void ResetEffects()
         {
             ammoReservation = false;
@@ -45,13 +44,11 @@ namespace BetterPotions.Common.Players
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo)
         {
-            if (ammoReservation && Main.rand.NextFloat() < 0.3f)
+            if (ammoReservation && Main.rand.NextFloat() < 0.5f)
                 return false;
 
             return base.CanConsumeAmmo(weapon, ammo);
         }
-
-
 
         int manaRegenerationCounter = 0;
         float discoInfernoRingScale = 1f;

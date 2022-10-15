@@ -7,7 +7,7 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 * Some potions and buffs have had their tooltips changed to be more informative and consistent 
 
 ### **Vanilla potion changes**
-* Ammo Reservation - 30% (was 20%) chance to not consume ammo
+* Ammo Reservation - 50% (was 20%) chance to not consume ammo
 * Archery - Has been turned into the Predator Potion, 10% increased ranged damage and critical chance 
 * Builder - Increased placement range by 3 (was 1) tiles and increased placement speed by 50% (was 25%)
 * Mana Regeneration - Also grants a constant 4 mana regeneration per second which happens even if you’re using a magic weapon
@@ -16,11 +16,11 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 
 ### **Potions added**
 * Grave Potion - Teleports you to where you last died. Crafted with bottled water, specular fish and deathweed
-* War Potion - Increases enemy spawn rate and cap by 400%. Crafted with bottled water, soul of fright, blinkroot and shiverthorn. Mutually exclusive with Battle
+* War Potion - Increases enemy spawn rate and cap by 400%. Crafted with battle potion and soul of fright. Mutually exclusive with Battle
 * Instigating Potion - Makes enemies more likely to target you. Crafted with bottled water, tissue sample and deathweed
 * Deter Potion - Makes enemies less likely to target you. Crafted with bottled water, shadow scale and deathweed
-* Disco Inferno Potion - Engulf nearby enemies in dazzling flames. Crafted with bottled water, crystal shard, flarefin koi and fireblossom. Mutually exclusive with Inferno
-* Orichalcumskin Potion - Increases defense by 14. Crafted with bottled water, daybloom and orichalcum/mythril or. Mutually exclusive with Ironskin
+* Disco Inferno Potion - Engulf nearby enemies in dazzling flames. Crafted with inferno potion and crystal shard. Mutually exclusive with Inferno
+* Orichalcumskin Potion - Increases defense by 14. Crafted with ironskin potion and orichalcum/mythril ore. Mutually exclusive with Ironskin
 * Berserker Potion - Increases melee damage and speed by 10%. Crafted with bottled water, rotten chunk/vertebrae, shiverthorn and fireblossom
 * Piercing Potion - Increases armor penetration by 10. Crafted with bottled water, demonite/crimtane ore, deathweed
 * Leaping Potion - Increases jump speed by 50% and enables auto-jump. Crafted with bottled water, cloud, blinkroot, waterleaf
@@ -30,6 +30,11 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 * Flight Potion - Grants you ethereal wings to fly with. Crafted with bottled water, soul of flight, feather and daybloom
 
 ### **Changelog**
+* *v1.2.0* *
+* Fixed an issue where Ammo Reservation buff tooltip wasn't displaying properly
+* Buffed Ammo Reservation (50% from 30%)
+* Changed some potion recipes to fit more thematically
+* Changed "minion damage" to "summon damage" in preparation for 1.4.4 parity
 * *v1.1.0* *
 * Fixed an issue where items would display a 10 minute buff time when they shouldn’t
 * *v1.0.0* *
