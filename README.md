@@ -30,12 +30,12 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 * Flight Potion - Grants you ethereal wings to fly with. Crafted with bottled water, soul of flight, feather and daybloom
 
 ### **Changelog**
-* *v1.2.0* *
+* *v1.2.0*
 * Fixed an issue where Ammo Reservation buff tooltip wasn't displaying properly
 * Buffed Ammo Reservation (50% from 30%)
 * Changed some potion recipes to fit more thematically
 * Changed "minion damage" to "summon damage" in preparation for 1.4.4 parity
-* *v1.1.0* *
+* *v1.1.0*
 * Fixed an issue where items would display a 10 minute buff time when they shouldn’t
-* *v1.0.0* *
+* *v1.0.0*
 * Released
