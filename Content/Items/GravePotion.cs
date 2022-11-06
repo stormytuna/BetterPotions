@@ -3,8 +3,8 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using BetterPotions.Content.Projectiles;
 using BetterPotions.Common.Configs;
+using Terraria.DataStructures;
 
 namespace BetterPotions.Content.Items
 {
@@ -53,9 +53,9 @@ namespace BetterPotions.Content.Items
 		}
 
         public override bool CanUseItem(Player player)
-			=> player.ownedProjectileCounts[ModContent.ProjectileType<GravePotionMarker>()] > 0;
+			=> player.GetModPlayer<GravePotionPlayer>().gravePotionPos != Vector2.Zero;
 
-        public override void UseStyle(Player player, Rectangle heldItemFrame)
+		public override void UseStyle(Player player, Rectangle heldItemFrame)
         {
 			// Each frame make dust
 			if (Main.rand.NextBool())
@@ -87,52 +87,8 @@ namespace BetterPotions.Content.Items
 				}
 
 				// The actual method that moves the player back to bed/spawn.
-				Projectile marker = new Projectile();
-				player.creativeInterface = false;
-				player.StopVanityActions();
-				foreach (Projectile p in Main.projectile)
-                {
-					if (p.owner == player.whoAmI && p.type == ModContent.ProjectileType<GravePotionMarker>())
-                    {
-						marker = p;
-						continue;
-                    }
-                }
-				player.wet = false;
-				player.wetCount = 0;
-				player.lavaWet = false;
-				Vector2 oldPos = player.position;
-				player.Center = marker.Center;
-				player.fallStart = (int)(player.position.Y / 16f);
-				player.fallStart2 = player.fallStart;
-				player.velocity.X = 0f;
-				player.velocity.Y = 0f;
-				player.ResetAdvancedShadows();
-				for (int i = 0; i < 3; i++)
-					player.UpdateSocialShadow();
-				player.oldPosition = player.position + player.BlehOldPositionFixer;
-				player.SetTalkNPC(-1);
-				if (player.whoAmI == Main.myPlayer)
-                {
-					Main.npcChatCornerItem = 0;
-					if (Vector2.Distance(oldPos, player.position) < new Vector2(Main.screenWidth, Main.screenHeight).Length() / 2f + 100f)
-                    {
-						Main.SetCameraLerp(0.1f, 0);
-                    }
-					else
-                    {
-						Main.BlackFadeIn = 255;
-						Lighting.Clear();
-						Main.screenLastPosition = Main.screenPosition;
-						Main.instantBGTransitionCounter = 10;
-						Main.renderNow = true;
-						Main.screenPosition.X = player.position.X + (float)(player.width / 2) - (float)(Main.screenWidth / 2);
-						Main.screenPosition.Y = player.position.Y + (float)(player.height / 2) - (float)(Main.screenHeight / 2);
-						player.ForceUpdateBiomes();
-					}
-				}
-				marker.Kill();
-
+				player.Teleport(player.GetModPlayer<GravePotionPlayer>().gravePotionPos);
+				player.GetModPlayer<GravePotionPlayer>().gravePotionPos = Vector2.Zero;
 
 				// Make dust 70 times for a cool effect. This dust is the dust at the destination.
 				for (int i = 0; i < 70; i++)
@@ -140,7 +96,16 @@ namespace BetterPotions.Content.Items
 					int d = Dust.NewDust(player.position, player.width, player.height, DustID.Pixie, 0f, 0f, 150, Color.White, 1.1f);
 				}
 			}
+        }
+    }
 
+	public class GravePotionPlayer : ModPlayer
+    {
+		public Vector2 gravePotionPos = Vector2.Zero;
+
+        public override void Kill(double damage, int hitDirection, bool pvp, PlayerDeathReason damageSource)
+        {
+			gravePotionPos = Player.position;
         }
     }
 }
