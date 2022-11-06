@@ -1,16 +1,9 @@
-using System;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
-using BetterPotions.Content.Projectiles;
-using BetterPotions.Content.Buffs;
-using BetterPotions.Content.Items;
 using BetterPotions.Common.Players;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.GameContent;
 using ReLogic.Content;
 
 namespace BetterPotions.Common

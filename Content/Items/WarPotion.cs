@@ -44,13 +44,13 @@ namespace BetterPotions.Content.Items
 			Item.buffTime = 8 * 60 * 60;
 		}
 
-        public override void AddRecipes()
-        {
+		public override void AddRecipes()
+		{
 			CreateRecipe()
 				.AddIngredient(ItemID.BattlePotion)
 				.AddIngredient(ItemID.SoulofFright)
 				.AddTile(TileID.Bottles)
 				.Register();
-        }
-    }
+		}
+	}
 }
