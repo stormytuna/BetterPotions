@@ -41,6 +41,10 @@ Better Potions makes potions better and adds some unique potions. It adds severa
 To report any bugs or give feedback, message me on discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
 
 [b]Changelog[/b]
+[i]v1.2.2[/i]
+[list]
+[*]Fixed an issue where Orichalcumskin was mutually exclusive with some other buffs
+[/list]
 [i]v1.2.0[/i]
 [list]
 [*]Fixed an issue where Ammo Reservation buff tooltip wasn't displaying properly
