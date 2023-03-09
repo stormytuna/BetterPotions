@@ -14,8 +14,6 @@ body:
     options:
       - Latest 1.4-stable
       - Latest 1.4-preview
-    validations: 
-      required: true
 - type: dropdown
   attributes:
     label: OS
@@ -25,8 +23,6 @@ body:
       - Windows
       - Max
       - Linux
-    validations:
-      required: true
 - type: textarea
   attributes:
     label: Description
