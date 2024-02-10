@@ -3,8 +3,12 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
-using BetterPotions.Content.Buffs;
 using BetterPotions.Common.Configs;
+using BetterPotions.Content.Potions.DiscoInferno;
+using BetterPotions.Content.Potions.War;
+using BetterPotions.Content.Potions.Orichalcumskin;
+using BetterPotions.Content.Potions.HeightenedSenses;
+using BetterPotions.Content.Potions.Predator;
 
 namespace BetterPotions.Common.GlobalItems
 {
@@ -37,19 +41,19 @@ namespace BetterPotions.Common.GlobalItems
                 else
                     line.Text = "Increases placement range by 1 tiles and placement speed by 25%";
             }
-            
+
             if (item.type == ItemID.ManaRegenerationPotion && modConfig.PotionChanges_ManaRegen)
             {
                 line = tooltips.Find(x => x.Name == "Tooltip0");
                 line.Text = "Increases mana regeneration and constantly regenerate 4 mana per second";
             }
-            
+
             if (item.type == ItemID.ObsidianSkinPotion && modConfig.PotionChanges_ObsidianSkin)
             {
                 line = tooltips.Find(x => x.Name == "Tooltip0");
                 line.Text = "Grants immunity to fire, lava, cursed flames and ichor";
             }
-            
+
             if (item.type == ItemID.SummoningPotion && modConfig.PotionChanges_Summoning)
             {
                 line = tooltips.Find(x => x.Name == "Tooltip0");
@@ -151,7 +155,7 @@ namespace BetterPotions.Common.GlobalItems
             if (item.type == ItemID.ArcheryPotion && modConfig.PotionChanges_Archery)
             {
                 item.SetNameOverride("Predator Potion");
-                item.buffType = ModContent.BuffType<Predator>();
+                item.buffType = ModContent.BuffType<PredatorBuff>();
             }
         }
 
@@ -163,15 +167,15 @@ namespace BetterPotions.Common.GlobalItems
             switch (item.type)
             {
                 case ItemID.BattlePotion:
-                    return !player.HasBuff(ModContent.BuffType<War>());
+                    return !player.HasBuff(ModContent.BuffType<WarBuff>());
                 case ItemID.InfernoPotion:
-                    return !player.HasBuff(ModContent.BuffType<DiscoInferno>());
+                    return !player.HasBuff(ModContent.BuffType<DiscoInfernoBuff>());
                 case ItemID.IronskinPotion:
-                    return !player.HasBuff(ModContent.BuffType<Orichalcumskin>());
+                    return !player.HasBuff(ModContent.BuffType<OrichalcumskinBuff>());
                 case ItemID.HunterPotion:
                 case ItemID.NightOwlPotion:
                 case ItemID.TrapsightPotion:
-                    return !player.HasBuff(ModContent.BuffType<HeightenedSenses>());
+                    return !player.HasBuff(ModContent.BuffType<HeightenedSensesBuff>());
             }
 
             return base.CanUseItem(item, player);

@@ -2,10 +2,22 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using BetterPotions.Content.Items;
 using Terraria.UI;
 using System;
 using System.Linq;
+using BetterPotions.Content.Potions.Grave;
+using BetterPotions.Content.Potions.Instigating;
+using BetterPotions.Content.Potions.Deterring;
+using BetterPotions.Content.Potions.Berserker;
+using BetterPotions.Content.Potions.Piercing;
+using BetterPotions.Content.Potions.Leaping;
+using BetterPotions.Content.Potions.Steelfall;
+using BetterPotions.Content.Potions.War;
+using BetterPotions.Content.Potions.DiscoInferno;
+using BetterPotions.Content.Potions.Orichalcumskin;
+using BetterPotions.Content.Potions.HeightenedSenses;
+using BetterPotions.Content.Potions.Immovable;
+using BetterPotions.Content.Potions.Flight;
 
 namespace BetterPotions.Common.Systems
 {
@@ -32,7 +44,7 @@ namespace BetterPotions.Common.Systems
                     {
                         if (chest.item[invIndex].type == ItemID.None)
                         {
-                            // Grave 
+                            // Grave
                             if (Main.rand.NextBool(10) && !placedPotions[0])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<GravePotion>());
@@ -100,7 +112,7 @@ namespace BetterPotions.Common.Systems
                     }
                 }
 
-                // Dungeon chests 
+                // Dungeon chests
                 if (chest != null && Main.tile[chest.x, chest.y].TileType == TileID.Containers && Main.tile[chest.x, chest.y].TileFrameX == 2 * 36)
                 {
                     placedPotions = new bool[7] { false, false, false, false, false, false, false };
@@ -109,7 +121,7 @@ namespace BetterPotions.Common.Systems
                     {
                         if (chest.item[invIndex].type == ItemID.None)
                         {
-                            // Grave 
+                            // Grave
                             if (Main.rand.NextBool(4) && !placedPotions[0])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<GravePotion>());
@@ -118,7 +130,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // War 
+                            // War
                             if (Main.rand.NextBool(5) && !placedPotions[1])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<WarPotion>());
@@ -126,7 +138,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Disco Inferno 
+                            // Disco Inferno
                             if (Main.rand.NextBool(7) && !placedPotions[2])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<DiscoInfernoPotion>());
@@ -134,7 +146,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Orichalcumskin 
+                            // Orichalcumskin
                             if (Main.rand.NextBool(7) && !placedPotions[3])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<OrichalcumskinPotion>());
@@ -142,7 +154,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Heightened Senses 
+                            // Heightened Senses
                             if (Main.rand.NextBool(5) && !placedPotions[4])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<HeightenedSensesPotion>());
@@ -150,7 +162,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Immovable 
+                            // Immovable
                             if (Main.rand.NextBool(7) && !placedPotions[5])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<ImmovablePotion>());
@@ -158,7 +170,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Flight 
+                            // Flight
                             if (Main.rand.NextBool(8) && !placedPotions[6])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<FlightPotion>());
@@ -180,7 +192,7 @@ namespace BetterPotions.Common.Systems
                     {
                         if (chest.item[invIndex].type == ItemID.None)
                         {
-                            // Grave 
+                            // Grave
                             if (Main.rand.NextBool(4) && !placedPotions[0])
                             {
                                 ItemSorting.SortChest();
@@ -191,7 +203,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // War 
+                            // War
                             if (Main.rand.NextBool(5) && !placedPotions[1])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<WarPotion>());
@@ -199,7 +211,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Disco Inferno 
+                            // Disco Inferno
                             if (Main.rand.NextBool(7) && !placedPotions[2])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<DiscoInfernoPotion>());
@@ -207,7 +219,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Orichalcumskin 
+                            // Orichalcumskin
                             if (Main.rand.NextBool(7) && !placedPotions[3])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<OrichalcumskinPotion>());
@@ -215,7 +227,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Heightened Senses 
+                            // Heightened Senses
                             if (Main.rand.NextBool(5) && !placedPotions[4])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<HeightenedSensesPotion>());
@@ -223,7 +235,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Immovable 
+                            // Immovable
                             if (Main.rand.NextBool(7) && !placedPotions[5])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<ImmovablePotion>());
@@ -231,7 +243,7 @@ namespace BetterPotions.Common.Systems
                                 continue;
                             }
 
-                            // Flight 
+                            // Flight
                             if (Main.rand.NextBool(8) && !placedPotions[6])
                             {
                                 chest.item[invIndex].SetDefaults(ModContent.ItemType<FlightPotion>());

@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 using BetterPotions.Common.Players;
@@ -12,7 +9,7 @@ namespace BetterPotions.Common.GlobalBuffs
     public class BetterPotionsGlobalBuff : GlobalBuff
     {
         #region Tooltips
-        public override void ModifyBuffTip(int type, ref string tip, ref int rare)
+        public override void ModifyBuffText(int type, ref string buffName, ref string tip, ref int rare)
         {
             var modConfig = ModContent.GetInstance<BetterPotionsConfig>();
 
