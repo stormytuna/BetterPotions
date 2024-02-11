@@ -2,13 +2,13 @@
   "profiles": {
     "Terraria": {
       "commandName": "Executable",
-      "executablePath": "dotnet",
+      "executablePath": "$(DotNetPath)",
       "commandLineArgs": "$(tMLPath) -skipselect \"dev-better-potions:dev-classic\"",
       "workingDirectory": "$(tMLSteamPath)"
     },
     "TerrariaServer": {
       "commandName": "Executable",
-      "executablePath": "dotnet",
+      "executablePath": "$(DotNetPath)",
       "commandLineArgs": "$(tMLServerPath)",
       "workingDirectory": "$(tMLSteamPath)"
     }

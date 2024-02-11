@@ -2,11 +2,14 @@ using System;
 using System.Collections.Generic;
 using Terraria.ModLoader.Config;
 using System.ComponentModel;
+using Terraria.ModLoader;
 
 namespace BetterPotions.Common.Configs
 {
     public class BetterPotionsConfig : ModConfig
     {
+        public static BetterPotionsConfig Instance => ModContent.GetInstance<BetterPotionsConfig>();
+
         public override ConfigScope Mode => ConfigScope.ServerSide;
 
 

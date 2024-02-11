@@ -165,6 +165,36 @@ Items: {
 			Mutually Exclusive with [i:BattlePotion] Battle Potion
 			'''
 	}
+
+	DecorativeHealingPotion: {
+		DisplayName: Decorative Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeGreaterHealingPotion: {
+		DisplayName: Decorative Greater Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeSuperHealingPotion: {
+		DisplayName: Decorative Super Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeManaPotion: {
+		DisplayName: Decorative Mana Potion
+		Tooltip: ""
+	}
+
+	DecorativeGreaterManaPotion: {
+		DisplayName: Decorative Greater Mana Potion
+		Tooltip: ""
+	}
+
+	DecorativeSuperManaPotion: {
+		DisplayName: Decorative Super Mana Potion
+		Tooltip: ""
+	}
 }
 
 Configs: {
