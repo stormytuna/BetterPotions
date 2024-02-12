@@ -19,7 +19,7 @@ public class FlightPlayerDrawLayer : PlayerDrawLayer
 
     protected override void Draw(ref PlayerDrawSet drawInfo) {
         if (wingsTexture == null) {
-            wingsTexture = ModContent.Request<Texture2D>("BetterPotions/Content/Potions/Flight/FlightPotionWings");
+            wingsTexture = ModContent.Request<Texture2D>("BetterPotions/Content/Potions/Flight/FlightPotionOnPlayerWings");
         }
 
         Player drawPlayer = drawInfo.drawPlayer;
