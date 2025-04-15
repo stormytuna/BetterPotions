@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -24,7 +25,7 @@ public class ManaRegenerationGlobalBuff : GlobalBuff
             return;
         }
 
-        tip = "Increased mana regeneration and constantly regenerate 4 mana per second";
+        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.ManaRegenerationPotion");
     }
 }
 
@@ -63,6 +64,6 @@ public class ManaRegenerationGlobalItem : GlobalItem
             return;
         }
 
-        line.Text = "Increases mana regeneration and constantly regenerate 4 mana per second";
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffManaRegeneration");
     }
 }

@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -25,7 +26,7 @@ public class AmmoReservationGlobalBuff : GlobalBuff
             return;
         }
 
-        tip = "50% chance not to consume ammo";
+        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.AmmoReservationPotion");
     }
 }
 
@@ -41,7 +42,7 @@ public class AmmoReservationGlobalItem : GlobalItem
             return;
         }
 
-        line.Text = "Increases chance to not consume ammo by 50%";
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffAmmoReservation");
     }
 }
 

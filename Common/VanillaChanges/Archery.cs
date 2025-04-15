@@ -5,6 +5,7 @@ using BetterPotions.Content.Potions.Predator;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -15,7 +16,7 @@ public class Archery : GlobalItem
     public override bool AppliesToEntity(Item entity, bool lateInstantiation) => entity.type == ItemID.ArcheryPotion;
 
     public override void SetDefaults(Item entity) {
-        entity.SetNameOverride("Predator Potion");
+        entity.SetNameOverride(Language.GetTextValue("Mods.BetterPotions.VanillaChanges.ArcheryRename"));
         entity.buffType = ModContent.BuffType<PredatorBuff>();
     }
 
@@ -25,6 +26,6 @@ public class Archery : GlobalItem
             return;
         }
 
-        line.Text = "Increases ranged damage and critical chance by 10%";
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.ArcheryPotion");
     }
 }

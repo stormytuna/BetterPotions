@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -18,24 +19,24 @@ public class ImprovedTooltipsGlobalItem : GlobalItem
         }
 
         line.Text = item.type switch {
-            ItemID.BattlePotion => "Increases enemy spawn rate and spawn cap by 100%",
-            ItemID.CalmingPotion => "Decreases enemy spawn rate by 17% and decreases enemy spawn cap by 20%",
-            ItemID.CratePotion => "Increases chance to get a crate by 10%",
-            ItemID.TrapsightPotion => "Allows you to see nearby sources of danger",
-            ItemID.FeatherfallPotion => "Slows falling speed\nPress UP or DOWN to control speed of descent",
-            ItemID.FishingPotion => "Increases fishing power by 15",
-            ItemID.FlipperPotion => "Allows you to swim swiftly in liquids",
-            ItemID.GillsPotion => "Allows you to breathe underwater",
-            ItemID.GravitationPotion => "Allows you to control gravity\nPress UP to reverse gravity",
-            ItemID.InvisibilityPotion => "Grants invisibility and decreases enemy spawn rate by 20%",
-            ItemID.IronskinPotion => "Increases defense by 8",
-            ItemID.MagicPowerPotion => "Increases magic damage by 20%",
-            ItemID.NightOwlPotion => "Allows you to see better in the dark",
-            ItemID.RegenerationPotion => "Grants life regeneration",
-            ItemID.SwiftnessPotion => "Increases movement speed by 25%",
-            ItemID.TitanPotion => "Increases knockback by 50%",
-            ItemID.WarmthPotion => "Reduces damage from cold sources by 30%",
-            ItemID.WaterWalkingPotion => "Grants the ability to walk on liquids\nPress DOWN to enter liquid",
+            ItemID.BattlePotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BattlePotion"),
+            ItemID.CalmingPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.CalmingPotion"),
+            ItemID.CratePotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.CratePotion"),
+            ItemID.TrapsightPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.TrapsightPotion"),
+            ItemID.FeatherfallPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.FeatherfallPotion"),
+            ItemID.FishingPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.FishingPotion"),
+            ItemID.FlipperPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.FlipperPotion"),
+            ItemID.GillsPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.GillsPotion"),
+            ItemID.GravitationPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.GravitationPotion"),
+            ItemID.InvisibilityPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.InvisibilityPotion"),
+            ItemID.IronskinPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.IronskinPotion"),
+            ItemID.MagicPowerPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.MagicPowerPotion"),
+            ItemID.NightOwlPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.NightOwlPotion"),
+            ItemID.RegenerationPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.RegenerationPotion"),
+            ItemID.SwiftnessPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.SwiftnessPotion"),
+            ItemID.TitanPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.TitanPotion"),
+            ItemID.WarmthPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.WarmthPotion"),
+            ItemID.WaterWalkingPotion => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.WaterWalkingPotion"),
             _ => line.Text
         };
     }
@@ -47,22 +48,22 @@ public class ImprovedTooltipsGlobalBuff : GlobalBuff
 
     public override void ModifyBuffText(int type, ref string buffName, ref string tip, ref int rare) {
         tip = type switch {
-            BuffID.Battle => "100% increased enemy spawn rate and spawn cap",
-            BuffID.Calm => "17% decreased enemy spawn rate and 20% decreased enemy spawn cap",
-            BuffID.Crate => "10% increased chance of fishing up a crate",
-            BuffID.Dangersense => "You can see nearby sources of danger",
-            BuffID.Featherfall => "Falling speed is slowed\nPress UP or DOWN to control speed of descent",
-            BuffID.Fishing => "Increased fishing power by 15",
-            BuffID.Flipper => "Swim swiftly in liquids",
-            BuffID.Gills => "Breathe underwater",
-            BuffID.Gravitation => "Control gravity\nPress UP to reverse gravity",
-            BuffID.Invisibility => "Invisible and 20% decreased enemy spawn rate",
-            BuffID.Ironskin => "Increased defense by 8",
-            BuffID.NightOwl => "You can see better in the dark",
-            BuffID.Regeneration => "Increased life regeneration",
-            BuffID.Titan => "50% increased knockback",
-            BuffID.Warmth => "30% reduced damage from cold sources",
-            BuffID.WaterWalking => "Walk on liquids\nPress DOWN to enter liquid",
+            BuffID.Battle => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffBattle"),
+            BuffID.Calm => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffCalm"),
+            BuffID.Crate => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffCrate"),
+            BuffID.Dangersense => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffDangersense"),
+            BuffID.Featherfall => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffFeatherfall"),
+            BuffID.Fishing => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffFishing"),
+            BuffID.Flipper => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffFlipper"),
+            BuffID.Gills => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffGills"),
+            BuffID.Gravitation => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffGravitation"),
+            BuffID.Invisibility => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffInvisibility"),
+            BuffID.Ironskin => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffIronskin"),
+            BuffID.NightOwl => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffNightOwl"),
+            BuffID.Regeneration => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffRegeneration"),
+            BuffID.Titan => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffTitan"),
+            BuffID.Warmth => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffWarmth"),
+            BuffID.WaterWalking => Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffWaterWalking"),
             _ => tip
         };
     }

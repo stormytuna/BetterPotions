@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -25,7 +26,7 @@ public class ObsidianSkinGlobalBuff : GlobalBuff
             return;
         }
 
-        tip = "Immune to fire, lava, cursed flames and ichor";
+        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffObsidianSkin");
     }
 }
 
@@ -41,6 +42,6 @@ public class ObsidianSkinGlobalItem : GlobalItem
             return;
         }
 
-        line.Text = "Grants immunity to fire, lava, cursed flames and ichor";
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.ObsidianSkinPotion");
     }
 }
