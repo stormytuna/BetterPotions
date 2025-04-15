@@ -1,0 +1,403 @@
+Buffs: {
+	BerserkerBuff: {
+		DisplayName: Berserker Buff
+		Description: 10% increased melee damage and speed
+	}
+
+	DeterringBuff: {
+		DisplayName: Deterring Buff
+		Description: Enemies are less likely to target you
+	}
+
+	DazzlingFlamesBuff: {
+		DisplayName: Dazzling Flames Buff
+		Description: You are engulfed in dazzling flames!
+	}
+
+	DiscoInfernoBuff: {
+		DisplayName: Disco Inferno Buff
+		Description: Nearby enemies are engulfed in dazzling flames
+	}
+
+	FlightBuff: {
+		DisplayName: Flight Buff
+		Description: Fly with ethereal wings
+	}
+
+	HeightenedSensesBuff: {
+		DisplayName: Heightened Senses Buff
+		Description: See nearby sources of danger, see better in the dark and see the location of enemies
+	}
+
+	ImmovableBuff: {
+		DisplayName: Immovable Buff
+		Description: Immune to knockback
+	}
+
+	InstigatingBuff: {
+		DisplayName: Instigating Buff
+		Description: Enemies are more likely to target you
+	}
+
+	LeapingBuff: {
+		DisplayName: Leaping Buff
+		Description: 50% increased jump speed and auto-jump enabled
+	}
+
+	OrichalcumskinBuff: {
+		DisplayName: Orichalcumskin Buff
+		Description: Increased defense by 14
+	}
+
+	PiercingBuff: {
+		DisplayName: Piercing Buff
+		Description: Increased armor penetration by 10
+	}
+
+	PredatorBuff: {
+		DisplayName: Predator Buff
+		Description: 10% increased ranged damage and critical chance
+	}
+
+	SteelfallBuff: {
+		DisplayName: Steelfall Buff
+		Description: Falling speed is increased\nPress DOWN to fall faster
+	}
+
+	WarBuff: {
+		DisplayName: War Buff
+		Description: 400% increased enemy spawn rate and spawn cap
+	}
+}
+
+Items: {
+	BerserkerPotion: {
+		DisplayName: Berserker Potion
+		Tooltip: Increases melee damage and speed by 10%
+	}
+
+	DeterringPotion: {
+		DisplayName: Deterring Potion
+		Tooltip: Makes enemies less likely to target you
+	}
+
+	DiscoInfernoPotion: {
+		DisplayName: Disco Inferno Potion
+		Tooltip:
+			'''
+			Engulf nearby enemies in dazzling flames
+			Mutually exclusive with [i:InfernoPotion] Inferno Potion
+			'Burn baby burn!'
+			'''
+	}
+
+	FlightPotion: {
+		DisplayName: Flight Potion
+		Tooltip: Grants you ethereal wings to fly with
+	}
+
+	FlightPotionWings: {
+		DisplayName: Flight Potion Wings
+		Tooltip:
+			'''
+			A dummy item to facilitate custom wings with Flight Potion
+			You shouldn't be reading this!
+			'''
+	}
+
+	GravePotion: {
+		DisplayName: Grave Potion
+		Tooltip: Teleports you to where you last died
+	}
+
+	HeightenedSensesPotion: {
+		DisplayName: Heightened Senses Potion
+		Tooltip:
+			'''
+			Allows you to see nearby sources of danger, see better in the dark and see nearby enemies
+			Mutually exclusive with [i:TrapsightPotion] Dangersense, [i:NightOwlPotion] Night Owl and [i:HunterPotion] Hunter Potions
+			'''
+	}
+
+	ImmovablePotion: {
+		DisplayName: Immovable Potion
+		Tooltip: Grants you immunity to knockback
+	}
+
+	InstigatingPotion: {
+		DisplayName: Instigating Potion
+		Tooltip: Makes enemies more likely to target you
+	}
+
+	LeapingPotion: {
+		DisplayName: Leaping Potion
+		Tooltip: Increases jump speed by 50% and enables auto-jump
+	}
+
+	OrichalcumskinPotion: {
+		DisplayName: Orichalcumskin Potion
+		Tooltip:
+			'''
+			Increases defense by 14
+			Mutually exclusive with [i:IronskinPotion] Ironskin Potion
+			'''
+	}
+
+	PiercingPotion: {
+		DisplayName: Piercing Potion
+		Tooltip: Increases armor penetration by 10
+	}
+
+	SteelfallPotion: {
+		DisplayName: Steelfall Potion
+		Tooltip:
+			'''
+			Increases falling speed
+			Press DOWN to fall faster
+			'''
+	}
+
+	WarPotion: {
+		DisplayName: War Potion
+		Tooltip:
+			'''
+			Increases enemy spawn rate and spawn cap by 400%
+			Mutually Exclusive with [i:BattlePotion] Battle Potion
+			'''
+	}
+
+	DecorativeHealingPotion: {
+		DisplayName: Decorative Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeGreaterHealingPotion: {
+		DisplayName: Decorative Greater Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeSuperHealingPotion: {
+		DisplayName: Decorative Super Healing Potion
+		Tooltip: ""
+	}
+
+	DecorativeManaPotion: {
+		DisplayName: Decorative Mana Potion
+		Tooltip: ""
+	}
+
+	DecorativeGreaterManaPotion: {
+		DisplayName: Decorative Greater Mana Potion
+		Tooltip: ""
+	}
+
+	DecorativeSuperManaPotion: {
+		DisplayName: Decorative Super Mana Potion
+		Tooltip: ""
+	}
+}
+
+VanillaChanges: {
+	AmmoReservationPotion: 50% chance not to consume ammo
+	BuffAmmoReservation: Increases chance to not consume ammo by 50%
+	ArcheryRename: Predator Potion
+	ArcheryPotion: Increases ranged damage and critical chance by 10%
+	BuilderPotion: Increased placement range by 3 tiles and placement speed by 50%
+	BuffBuilder: Increases placement range by 3 tiles and placement speed by 50%
+	ManaRegenerationPotion: Increased mana regeneration and constantly regenerate 4 mana per second
+	BuffManaRegeneration: Increases mana regeneration and constantly regenerate 4 mana per second
+	ObsidianSkinPotion: Immune to fire, lava, cursed flames and ichor
+	BuffObsidianSkin: Immune to fire, lava, cursed flames and ichor
+	SummoningPotion: Increases your max number of minions and sentries by 1 and increases summon damage by 10%"
+	BuffSummoning: Increased max number of minions and sentries by 1 and 10% increased summon damage
+	BattlePotion: Increases enemy spawn rate and spawn cap by 100%
+	BuffBattle: 100% increased enemy spawn rate and spawn cap
+	CalmingPotion: Decreases enemy spawn rate by 17% and decreases enemy spawn cap by 20%
+	BuffCalm: 17% decreased enemy spawn rate and 20% decreased enemy spawn cap
+	CratePotion: Increases chance to get a crate by 10%
+	BuffCrate: 10% increased chance of fishing up a crate
+	TrapsightPotion: Allows you to see nearby sources of danger
+	BuffDangersense: You can see nearby sources of danger
+	FeatherfallPotion: 
+		'''
+		Slows falling speed
+		Press UP or DOWN to control speed of descent
+		'''
+	BuffFeatherfall:
+		'''
+		Falling speed is slowed
+		Press UP or DOWN to control speed of descent
+		'''
+	FishingPotion: Increases fishing power by 15
+	BuffFishing: Increased fishing power by 15
+	FlipperPotion: Allows you to swim swiftly in liquids
+	BuffFlipper: Swim swiftly in liquids
+	GillsPotion: Allows you to breathe underwater
+	BuffGills: Breathe underwater
+	GravitationPotion: 
+		'''
+		Allows you to control gravity
+		Press UP to reverse gravity
+		'''
+	BuffGravitation: 
+		'''
+		Control gravity
+		Press UP to reverse gravity
+		'''
+	InvisibilityPotion: Grants invisibility and decreases enemy spawn rate by 20%
+	BuffInvisibility: Invisible and 20% decreased enemy spawn rate
+	IronskinPotion: Increases defense by 8
+	BuffIronskin: Increased defense by 8
+	MagicPowerPotion: Increases magic damage by 20%
+	NightOwlPotion: Allows you to see better in the dark
+	BuffNightOwl: You can see better in the dark
+	RegenerationPotion: Grants life regeneration
+	BuffRegeneration: Increased life regeneration
+	SwiftnessPotion: Increases movement speed by 25%
+	TitanPotion: Increases knockback by 50%
+	BuffTitan: 50% increased knockback
+	WarmthPotion: Reduces damage from cold sources by 30%
+	BuffWarmth: 30% reduced damage from cold sources
+	WaterWalkingPotion: 
+		'''
+		Grants the ability to walk on liquids
+		Press DOWN to enter liquid
+		'''
+	BuffWaterWalking: 
+		'''
+		Walk on liquids
+		Press DOWN to enter liquid
+		'''
+}
+
+Configs: {
+	BetterPotionsConfig: {
+		DisplayName: Better Potions Config
+
+		Headers: {
+			QualityOfLife: Quality Of Life Header
+			VanillaPotionChanges: Vanilla Potion Changes Header
+			ModdedPotions: Modded Potions Header
+		}
+
+		PersistentBuffs: {
+			Label: "[i:1353] Buffs are persistent"
+			Tooltip: When you die, your buffs will be reapplied on respawn
+		}
+
+		PersistentBuffsPenalty: {
+			Label: "[i:216] Persistent buffs penalty"
+			Tooltip: How much of the remaining time on each buff is lost. 0 is 0% penalty, 1 is 100% penalty
+		}
+
+		PotionsLastTenMinutes: {
+			Label: "[i:17] Potions last 10 minutes"
+			Tooltip: Changes most potions. Potions that last over 10 minutes and potions that rely on duration time for their effect are unchanged
+		}
+
+		TenMinutePotionsBlacklist: {
+			Label: "[i:4084] 10 minute potions blacklist"
+			Tooltip: Adding a potion to this blacklist will prevent its time being changed to 10 minutes
+		}
+
+		PotionsAndBuffsImprovedTooltips: {
+			Label: "[i:531] Potions and buffs have improved tooltips"
+			Tooltip: Changes some potions and buffs to be more informative and worded more consistently
+		}
+
+		PotionChanges_AmmoReservation: {
+			Label: "[i:2344] Ammo Reservation Potion changes"
+			Tooltip: 30% (was 20%) chance not to consume ammo
+		}
+
+		PotionChanges_Archery: {
+			Label: "[i:303] Archery Potion changes"
+			Tooltip: Reworked to be "Predator Potion" - 10% increased ranged damage and critical chance
+		}
+
+		PotionChanges_Builder: {
+			Label: "[i:2325] Builder Potion changes"
+			Tooltip: Increased placement range by 3 (was 1) and increased placement speed by 50% (was 25%)
+		}
+
+		PotionChanges_ManaRegen: {
+			Label: "[i:293] Mana Regeneration changes"
+			Tooltip: Also grants a constant 4 mana regeneration per second which happens even when you're using a magic weapon
+		}
+
+		PotionChanges_ObsidianSkin: {
+			Label: "[i:288] Obsidian Skin Potion changes"
+			Tooltip: Also makes you immune to Cursed Inferno and Ichor
+		}
+
+		PotionChanges_Summoning: {
+			Label: "[i:2328] Summoning Potion changes"
+			Tooltip: Also increases sentry slots by 1 and increases summoning damage by 10%
+		}
+
+		PotionsAdded_Grave: {
+			Label: "[i:BetterPotions/GravePotion] Grave Potion"
+			Tooltip: Teleports you to where you last died. Crafted with bottled water, specular fish and deathweed
+		}
+
+		PotionsAdded_War: {
+			Label: "[i:BetterPotions/WarPotion] War Potion"
+			Tooltip: Increases enemy spawn rate and cap by 400%. Crafted with bottled water, soul of fright, blinkroot and shiverthorn. Mutually exclusive with Battle
+		}
+
+		PotionsAdded_Instigating: {
+			Label: "[i:BetterPotions/InstigatingPotion] Instigating Potion"
+			Tooltip: Makes enemies more likely to target you. Crafted with bottled water, tissue sample and deathweed
+		}
+
+		PotionsAdded_Deterring: {
+			Label: "[i:BetterPotions/DeterringPotion] Deterring Potion"
+			Tooltip: Makes enemies less likely to target you. Crafted with bottled water, shadow scale and deathweed
+		}
+
+		PotionsAdded_DiscoInferno: {
+			Label: "[i:BetterPotions/DiscoInfernoPotion] Disco Inferno Potion"
+			Tooltip: Engulf nearby enemies in dazzling flames. Crafted with bottled water, crystal shard, flarefin koi and fireblossom. Mutually exclusive with Inferno
+		}
+
+		PotionsAdded_Orichalcumskin: {
+			Label: "[i:BetterPotions/OrichalcumskinPotion] Orichalcumskin Potion"
+			Tooltip: Increases defense by 14. Crafted with bottled water, daybloom and orichalcum/mythril or. Mutually exclusive with Ironskin
+		}
+
+		PotionsAdded_Berserker: {
+			Label: "[i:BetterPotions/BerserkerPotion] Berserker Potion"
+			Tooltip: Increases melee damage and speed by 10%. Crafted with bottled water, rotten chunk/vertebrae, shiverthorn and fireblossom
+		}
+
+		PotionsAdded_Piercing: {
+			Label: "[i:BetterPotions/PiercingPotion] Piercing Potion"
+			Tooltip: Increases armor penetration by 10. Crafted with bottled water, demonite/crimtane ore, deathweed
+		}
+
+		PotionsAdded_Leaping: {
+			Label: "[i:BetterPotions/LeapingPotion] Leaping Potion"
+			Tooltip: Increases jump speed by 50% and enables auto-jump. Crafted with bottled water, cloud, blinkroot, waterleaf
+		}
+
+		PotionsAdded_Steelfall: {
+			Label: "[i:BetterPotions/SteelfallPotion] Steelfall Potion"
+			Tooltip: Increases falling speed, press DOWN to fall faster. Crafted with bottled water, daybloom, blinkroot and iron/lead bar
+		}
+
+		PotionsAdded_HeightenedSenses: {
+			Label: "[i:BetterPotions/HeightenedSensesPotion] Heightened Senses Potion"
+			Tooltip: See nearby sources of danger, see better in the dark and see the location of enemies. Crafted with bottled water, soul of sight, daybloom and blinkroot
+		}
+
+		PotionsAdded_Immovable: {
+			Label: "[i:BetterPotions/ImmovablePotion] Immovable Potion"
+			Tooltip: Grants immunity to knockback. Crafted with bottled water, soul of might, shiverthorn and moonglow
+		}
+
+		PotionsAdded_Flight: {
+			Label: "[i:BetterPotions/FlightPotion] Flight Potion"
+			Tooltip: Grants you ethereal wings to fly with. Crafted with bottled water, soul of flight, feather and daybloom
+		}
+	}
+}
