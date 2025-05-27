@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -27,9 +28,9 @@ public class BuilderPotionGlobalBuff : GlobalBuff
         }
 
         if (BetterPotionsConfig.Instance.PotionChanges_Builder) {
-            tip = "Increased placement range by 3 tiles and placement speed by 50%";
+            tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuilderPotion");
         } else {
-            tip = "Increased placement range by 1 tile and placement speed by 25%";
+            tip = Language.GetTextValue("ItemTooltip.BuilderPotion");
         }
     }
 }
@@ -47,9 +48,9 @@ public class BuilderPotionGlobalItem : GlobalItem
         }
 
         if (BetterPotionsConfig.Instance.PotionsAndBuffsImprovedTooltips) {
-            line.Text = "Increases placement range by 3 tiles and placement speed by 50%";
+            line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffBuilder");
         } else {
-            line.Text = "Increases placement range by 1 tiles and placement speed by 25%";
+            line.Text = Language.GetTextValue("BuffDescription.BuilderIncreases");
         }
     }
 }

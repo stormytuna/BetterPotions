@@ -4,6 +4,7 @@ using BetterPotions.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace BetterPotions.Common.VanillaChanges;
 
@@ -25,7 +26,7 @@ public class SummoningGlobalBuff : GlobalBuff
             return;
         }
 
-        tip = "Increased max number of minions and sentries by 1 and 10% increased summon damage";
+        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffSummoning");
     }
 }
 
@@ -41,6 +42,6 @@ public class SummoningGlobalItem : GlobalItem
             return;
         }
 
-        line.Text = "Increases your max number of minions and sentries by 1 and increases summon damage by 10%";
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.SummoningPotion");
     }
 }

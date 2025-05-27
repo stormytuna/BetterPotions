@@ -197,6 +197,79 @@ Items: {
 	}
 }
 
+VanillaChanges: {
+	AmmoReservationPotion: 50% chance not to consume ammo
+	BuffAmmoReservation: Increases chance to not consume ammo by 50%
+	ArcheryRename: Predator Potion
+	ArcheryPotion: Increases ranged damage and critical chance by 10%
+	BuilderPotion: Increased placement range by 3 tiles and placement speed by 50%
+	BuffBuilder: Increases placement range by 3 tiles and placement speed by 50%
+	ManaRegenerationPotion: Increased mana regeneration and constantly regenerate 4 mana per second
+	BuffManaRegeneration: Increases mana regeneration and constantly regenerate 4 mana per second
+	ObsidianSkinPotion: Immune to fire, lava, cursed flames and ichor
+	BuffObsidianSkin: Immune to fire, lava, cursed flames and ichor
+	SummoningPotion: Increases your max number of minions and sentries by 1 and increases summon damage by 10%"
+	BuffSummoning: Increased max number of minions and sentries by 1 and 10% increased summon damage
+	BattlePotion: Increases enemy spawn rate and spawn cap by 100%
+	BuffBattle: 100% increased enemy spawn rate and spawn cap
+	CalmingPotion: Decreases enemy spawn rate by 17% and decreases enemy spawn cap by 20%
+	BuffCalm: 17% decreased enemy spawn rate and 20% decreased enemy spawn cap
+	CratePotion: Increases chance to get a crate by 10%
+	BuffCrate: 10% increased chance of fishing up a crate
+	TrapsightPotion: Allows you to see nearby sources of danger
+	BuffDangersense: You can see nearby sources of danger
+	FeatherfallPotion: 
+		'''
+		Slows falling speed
+		Press UP or DOWN to control speed of descent
+		'''
+	BuffFeatherfall:
+		'''
+		Falling speed is slowed
+		Press UP or DOWN to control speed of descent
+		'''
+	FishingPotion: Increases fishing power by 15
+	BuffFishing: Increased fishing power by 15
+	FlipperPotion: Allows you to swim swiftly in liquids
+	BuffFlipper: Swim swiftly in liquids
+	GillsPotion: Allows you to breathe underwater
+	BuffGills: Breathe underwater
+	GravitationPotion: 
+		'''
+		Allows you to control gravity
+		Press UP to reverse gravity
+		'''
+	BuffGravitation: 
+		'''
+		Control gravity
+		Press UP to reverse gravity
+		'''
+	InvisibilityPotion: Grants invisibility and decreases enemy spawn rate by 20%
+	BuffInvisibility: Invisible and 20% decreased enemy spawn rate
+	IronskinPotion: Increases defense by 8
+	BuffIronskin: Increased defense by 8
+	MagicPowerPotion: Increases magic damage by 20%
+	NightOwlPotion: Allows you to see better in the dark
+	BuffNightOwl: You can see better in the dark
+	RegenerationPotion: Grants life regeneration
+	BuffRegeneration: Increased life regeneration
+	SwiftnessPotion: Increases movement speed by 25%
+	TitanPotion: Increases knockback by 50%
+	BuffTitan: 50% increased knockback
+	WarmthPotion: Reduces damage from cold sources by 30%
+	BuffWarmth: 30% reduced damage from cold sources
+	WaterWalkingPotion: 
+		'''
+		Grants the ability to walk on liquids
+		Press DOWN to enter liquid
+		'''
+	BuffWaterWalking: 
+		'''
+		Walk on liquids
+		Press DOWN to enter liquid
+		'''
+}
+
 Configs: {
 	BetterPotionsConfig: {
 		DisplayName: Better Potions Config
