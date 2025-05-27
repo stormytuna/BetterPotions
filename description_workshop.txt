@@ -1,62 +1,141 @@
-Better Potions makes potions better and adds some unique potions. It adds several quality of life changes, such as buffs lasting after death and increasing the time that most potions last. It also changes a few vanilla potions, such as the Archery Potion which has been reworked to be a general ranger potion. Added potions will spawn in chests appropriate with their crafting ingredients, with post HM potions being rarer in late pre-HM chests
+Better Potions adds unique potions, modifies vanilla potions, and adds a few quality of life changes!
+
+[h2]TLDR[/h2]
+
+- Adds 13 new potions
+- Buffs 6 vanilla potions
+- Makes (most) potions last 10 minutes and allows them to persist after death
+- Multiplayer is supported
+- Highly configurable
+- Currently supports English and Russian, see below if you'd like to contribute another translation
 
 [hr][/hr]
 
-[b]Quality of life changes[/b]
-[list]
-[*]Buffs are persistent after death with a penalty of 25% of the remaining time
-[*]Most potions now last 10 minutes. Potions that lasted longer haven’t been changed and Luck potions also haven’t been changed
-[*]Some potions and buffs have had their tooltips changed to be more informative and consistent 
-[/list]
+[h2]New Potions[/h2]
 
-[b]Vanilla potion changes[/b]
-[list]
-[*]Ammo Reservation - 50% (was 20%) chance to not consume ammo
-[*]Archery - Has been turned into the Predator Potion, 10% increased ranged damage and critical chance 
-[*]Builder - Increased placement range by 3 (was 1) tiles and increased placement speed by 50% (was 25%)
-[*]Mana Regeneration - Also grants a constant 4 mana regeneration per second which happens even if you’re using a magic weapon
-[*]Obsidian Skin - Also makes you immune to cursed inferno and ichor
-[*]Summoning - Also grants +1 sentry slot and increases summoning damage by 10%. In game it’s referred to as “minion damage” to keep consistency but [i]all[/i] summoning damage is increased
-[/list]
+[table]
+    [tr]
+        [th]Name[/th]
+        [th]Effect[/th]
+        [th]Acquisition[/th]
+        [th]Notes[/th]
+    [/tr]
+    [tr]
+        [th]Grave Potion[/th]
+        [th]Teleports you to where you last died[/th]
+        [th]Crafted with bottled water, specular fish and deathweed[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]War Potion[/th]
+        [th]Increases enemy spawn rate and cap by 400%[/th]
+        [th]Crafted with battle potion and soul of fright[/th]
+        [th]Mutually exclusive with battle potion[/th]
+    [/tr]
+    [tr]
+        [th]Instigating Potion[/th]
+        [th]Makes enemies more likely to target you[/th]
+        [th]Crafted with bottled water, tissue sample, and deathweed[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Deterring Potion[/th]
+        [th]Makes enemies less likely to target you[/th]
+        [th]Crafted with bottled water, shadow scale, and deathweed[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Disco Inferno Potion[/th]
+        [th]Engulf nearby enemies in dazzling flames[/th]
+        [th]Crafted with inferno potion and crystal shard[/th]
+        [th]Mutually exclusive with inferno potion[/th]
+    [/tr]
+    [tr]
+        [th]Orichalcumskin Potion[/th]
+        [th]Increases defense by 14[/th]
+        [th]Crafted with ironskin potion and orichalcum/mythril ore[/th]
+        [th]Mutually exclusive with ironskin potion[/th]
+    [/tr]
+    [tr]
+        [th]Berserker Potion[/th]
+        [th]Increases melee damage and speed by 10%[/th]
+        [th]Crafted with bottled water, rotten chunk/vertebrae, shiverthorn, and fireblossom[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Piercing Potion[/th]
+        [th]Increases armor penetration by 10[/th]
+        [th]Crafted with bottled water, demonite/crimtane ore, and deathweed[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Leaping Potion[/th]
+        [th]Increases jump speed by 50% and enables auto-jump[/th]
+        [th]Crafted with bottled water, cloud, blinkroot, and waterleaf[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Steelfall Potion[/th]
+        [th]Increases falling speed, press DOWN to fall faster[/th]
+        [th]Crafted with bottled water, daybloom, blinkroot, and iron/lead bar[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Heightened Senses Potion[/th]
+        [th]See nearby sources of danger, see better in the dark and see the location of enemies[/th]
+        [th]Crafted with bottled water, soul of sight, daybloom and blinkroot[/th]
+        [th]Mutually exclusive with night owl, dangersense, and hunter potions[/th]
+    [/tr]
+    [tr]
+        [th]Immovable Potion[/th]
+        [th]Grants immunity to knockback[/th]
+        [th]Crafted with bottled water, soul of might, shiverthorn, and moonglow[/th]
+        [th][/th]
+    [/tr]
+    [tr]
+        [th]Flight Potion[/th]
+        [th]Grants you ethereal wings to fly with[/th]
+        [th]Crafted with bottled water, soul of flight, feather, and daybloom[/th]
+        [th][/th]
+    [/tr]
+[/table]
 
-[b]Potions added[/b]
-[list]
-[*]Grave Potion - Teleports you to where you last died. Crafted with bottled water, specular fish and deathweed
-[*]War Potion - Increases enemy spawn rate and cap by 400%. Crafted with battle potion and soul of fright. Mutually exclusive with Battle
-[*]Instigating Potion - Makes enemies more likely to target you. Crafted with bottled water, tissue sample and deathweed
-[*]Deter Potion - Makes enemies less likely to target you. Crafted with bottled water, shadow scale and deathweed
-[*]Disco Inferno Potion - Engulf nearby enemies in dazzling flames. Crafted with inferno potion and crystal shard. Mutually exclusive with Inferno
-[*]Orichalcumskin Potion - Increases defense by 14. Crafted with ironskin potion and orichalcum/mythril ore. Mutually exclusive with Ironskin
-[*]Berserker Potion - Increases melee damage and speed by 10%. Crafted with bottled water, rotten chunk/vertebrae, shiverthorn and fireblossom
-[*]Piercing Potion - Increases armor penetration by 10. Crafted with bottled water, demonite/crimtane ore, deathweed
-[*]Leaping Potion - Increases jump speed by 50% and enables auto-jump. Crafted with bottled water, cloud, blinkroot, waterleaf
-[*]Steelfall Potion - Increases falling speed, press DOWN to fall faster. Crafted with bottled water, daybloom, blinkroot and iron/lead bar
-[*]Heightened Senses Potion - See nearby sources of danger, see better in the dark and see the location of enemies. Crafted with bottled water, soul of sight, daybloom and blinkroot
-[*]Immovable Potion - Grants immunity to knockback. Crafted with bottled water, soul of might, shiverthorn and moonglow
-[*]Flight Potion - Grants you ethereal wings to fly with. Crafted with bottled water, soul of flight, feather and daybloom
-[/list]
+[h2]Vanilla Potion Changes[/h2]
+
+- Ammo Reservation - 50% (was 20%) chance to not consume ammo
+- Archery - Has been turned into the Predator Potion, 10% increased ranged damage and critical chance
+- Builder - Increased placement range by 3 (was 1) tiles and increased placement speed by 50% (was 25%)
+- Mana Regeneration - Also grants a constant 4 mana regeneration per second which happens even if you’re using a magic weapon
+- Obsidian Skin - Also makes you immune to cursed inferno and ichor
+- Summoning - Also grants +1 sentry slot and increases summoning damage by 10%
+
+[h2]Quality of Life Changes[/h2]
+
+- Buffs are persistent after death with a penalty of 25% of the remaining time
+- Most potions now last 10 minutes. Potions that lasted longer haven’t been changed and Luck potions also haven’t been changed
+- Some potions and buffs have had their tooltips changed to be more informative and consistent
+
+[h2]Configuration[/h2]
+
+- Whether buffs are persistent after death and how much of the remaining time is lost
+- Whether most potions last 10 minutes, including a blacklist
+- Whether vague potions and buffs have tooltips changed
+- Toggle for each vanilla potion change
+- Toggle for each added potion
 
 [hr][/hr]
 
-To report any bugs or give feedback, message me on discord (stormytuna#2688) or leave a comment on the Steam Workshop. You can also report bugs by creating an issue on the GitHub repo.
+[h2]Credits[/h2]
+- [url=https://github.com/Teftelnik]Teftelnik[/url] for Russian translation
 
-[b]Changelog[/b]
-[i]v1.2.2[/i]
-[list]
-[*]Fixed an issue where Orichalcumskin was mutually exclusive with some other buffs
-[/list]
-[i]v1.2.0[/i]
-[list]
-[*]Fixed an issue where Ammo Reservation buff tooltip wasn't displaying properly
-[*]Buffed Ammo Reservation (50% from 30%)
-[*]Changed some potion recipes to fit more thematically
-[*]Changed "minion damage" to "summon damage" in preparation for 1.4.4 parity
-[/list]
-[i]v1.1.0[/i]
-[list]
-[*]Fixed an issue where items would display a 10 minute buff time when they shouldn’t
-[/list]
-[i]v1.0.0[/i]
-[list]
-[*]Released
-[/list]
+[hr][/hr]
+
+Source code: https://github.com/stormytuna/BetterPotions
+
+Join the [url=https://discord.gg/yr3hUxUxpg]discord server![/url]
+
+If you enjoy my work, [url=https://ko-fi.com/stormytuna]please consider donating[/url]
+
+If you're able to contribute translations it would be greatly appreciated! Please open an issue with the translations, or create a PR with the new .hjson localization file.
+
+

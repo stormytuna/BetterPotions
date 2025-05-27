@@ -26,7 +26,7 @@ public class AmmoReservationGlobalBuff : GlobalBuff
             return;
         }
 
-        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.AmmoReservationPotion");
+        tip = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffAmmoReservation");
     }
 }
 
@@ -42,7 +42,7 @@ public class AmmoReservationGlobalItem : GlobalItem
             return;
         }
 
-        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.BuffAmmoReservation");
+        line.Text = Language.GetTextValue("Mods.BetterPotions.VanillaChanges.AmmoReservationPotion");
     }
 }
 

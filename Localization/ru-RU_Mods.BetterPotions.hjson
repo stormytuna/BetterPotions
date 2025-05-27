@@ -202,16 +202,16 @@ Items: {
 }
 
 VanillaChanges: {
-	AmmoReservationPotion: Увеличивает шанс сэкономить боеприпасы на 50%
-	BuffAmmoReservation: Шанс сэкономить боеприпасы увеличен на 50%
+	AmmoReservationPotion: Шанс сэкономить боеприпасы увеличен на 50%
+	BuffAmmoReservation: Увеличивает шанс сэкономить боеприпасы на 50%
 	ArcheryRename: Зелье хищника
 	ArcheryPotion: Увеличивает стрелковый урон и шанс стрелкового критического удара 10%
-	BuilderPotion: Увеличивает дальность установки блоков на 3 блока и скорость установки 50%
-	BuffBuilder: Дальность установки блоков увеличена на 3 блока, скорость установки увеличена на 50%
+	BuilderPotion: Дальность установки блоков увеличена на 3 блока, скорость установки увеличена на 50%
+	BuffBuilder: Увеличивает дальность установки блоков на 3 блока и скорость установки 50%
 	ManaRegenerationPotion: Увеличивает скорость восстановления маны и восстанавливает 4 ед. маны в секунду
 	BuffManaRegeneration: Скорость восстановления маны увеличена, восстанавливает 4 ед. маны в секунду
-	ObsidianSkinPotion: Даёт невосприимчивость к лаве, огненным блокам и дебаффам «{$BuffName.OnFire}», «{$BuffName.Ichor}» и «{$BuffName.CursedInferno}»
-	BuffObsidianSkin: Невосприимчивость к лаве, огненным блокам и дебаффам «{$BuffName.OnFire}», «{$BuffName.Ichor}» и «{$BuffName.CursedInferno}»
+	ObsidianSkinPotion: Невосприимчивость к лаве, огненным блокам и дебаффам «{$BuffName.OnFire}», «{$BuffName.Ichor}» и «{$BuffName.CursedInferno}»
+	BuffObsidianSkin: Даёт невосприимчивость к лаве, огненным блокам и дебаффам «{$BuffName.OnFire}», «{$BuffName.Ichor}» и «{$BuffName.CursedInferno}»
 	SummoningPotion: Увеличивает максимальное количество миньонов и стражей на 1, а также увеличивает урон призывателя на 10%
 	BuffSummoning: Максимальное количество миньонов и стражей увеличено на 1, урон призывателя увеличен на 10%
 	BattlePotion: Увеличивает скорость появления врагов и их максимальное возможное количество на 100%
@@ -222,7 +222,7 @@ VanillaChanges: {
 	BuffCrate: Шанс выловить ящик увеличен на 10%
 	TrapsightPotion: Позволяет видеть источники опасности поблизости
 	BuffDangersense: Видны ближайшие источники опасности
-	FeatherfallPotion: 
+	FeatherfallPotion:
 		'''
 		Снижает скорость падения
 		Удерживайте ВНИЗ или ВВЕРХ для контроля скорости падения
@@ -238,12 +238,12 @@ VanillaChanges: {
 	BuffFlipper: Быстрое плавание в жидкостях
 	GillsPotion: Позволяет дышать в жидкостях
 	BuffGills: Подводное дыхание
-	GravitationPotion: 
+	GravitationPotion:
 		'''
 		Позволяет контролировать гравитацию
 		Нажмите ВВЕРХ для смены гравитации
 		'''
-	BuffGravitation: 
+	BuffGravitation:
 		'''
 		Контроль над гравитацией
 		Нажмите ВВЕРХ для смены гравитации
@@ -262,12 +262,12 @@ VanillaChanges: {
 	BuffTitan: Сила отбрасывания увеличена на 50%
 	WarmthPotion: Снижает урон от источников холода на 30%
 	BuffWarmth: Урон от источников холода снижен на 30%
-	WaterWalkingPotion: 
+	WaterWalkingPotion:
 		'''
 		Даёт возможность ходить по жидкостям
 		Нажмите ВНИЗ для погружения в воду
 		'''
-	BuffWaterWalking: 
+	BuffWaterWalking:
 		'''
 		Ходьба по жидкостям
 		Нажмите ВНИЗ для погружения в воду
