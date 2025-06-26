@@ -30,6 +30,6 @@ public class TenMinutePotionsGlobalItem : GlobalItem
             return false;
         }
 
-        return Main.debuff[buffType] && !Main.vanityPet[buffType] && !Main.lightPet[buffType] && !Main.buffNoTimeDisplay[buffType];
+        return !Main.debuff[buffType] && !Main.vanityPet[buffType] && !Main.lightPet[buffType] && !Main.buffNoTimeDisplay[buffType];
     }
 }
